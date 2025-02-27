@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Wedding Invitation</title>
+    <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body style='background: {{ theme.colors.gradient }}'>
+    <div class='min-h-screen flex items-center justify-center p-4'>
+        <div class='max-w-lg w-full rounded-2xl p-8 text-center shadow-xl' style='background: {{ theme.colors.cardBg }}'>
+            <p class='text-sm uppercase tracking-widest mb-4' style='color: {{ theme.colors.accent }}'>You're Invited</p>
+            <h1 class='text-5xl font-light mb-6' style='color: {{ theme.colors.text }}'>{{ wedding.bride_name }} & {{ wedding.groom_name }}</h1>
+            <div class='border-t border-b py-4' style='border-color: {{ theme.colors.accent }}'>
+                <p style='color: {{ theme.colors.text }}'>{{ formatted_date }}</p>
+                <p style='color: {{ theme.colors.text }}'>{{ formatted_time }}</p>
+            </div>
+            <p class='mt-4' style='color: {{ theme.colors.text }}'>{{ wedding.venue }}</p>
+        </div>
+    </div>
+</body>
+</html>
