@@ -1,0 +1,13 @@
+﻿{
+  "stations": [
+    {"id": 1, "name": "Karachi Cantt", "city": "Karachi", "province": "Sindh"},
+    {"id": 2, "name": "Lahore Junction", "city": "Lahore", "province": "Punjab"},
+    {"id": 3, "name": "Islamabad", "city": "Islamabad", "province": "ICT"},
+    {"id": 4, "name": "Peshawar Cantt", "city": "Peshawar", "province": "KPK"},
+    {"id": 5, "name": "Quetta", "city": "Quetta", "province": "Balochistan"}
+  ],
+  "trains": [
+    {"id": 1, "name": "Green Line", "number": "105UP", "source": "Karachi", "destination": "Islamabad", "departure": "19:00", "arrival": "09:30"},
+    {"id": 2, "name": "Tezgam", "number": "7UP", "source": "Karachi", "destination": "Lahore", "departure": "21:00", "arrival": "08:15"}
+  ]
+}
