@@ -1,0 +1,272 @@
+[
+    {
+        "question": "What is the capital of Pakistan?",
+        "options": [
+            "Karachi",
+            "Lahore",
+            "Islamabad",
+            "Peshawar"
+        ],
+        "answer": "Islamabad"
+    },
+    {
+        "question": "Who was the founder of Pakistan?",
+        "options": [
+            "Allama Iqbal",
+            "Muhammad Ali Jinnah",
+            "Liaquat Ali Khan",
+            "Benazir Bhutto"
+        ],
+        "answer": "Muhammad Ali Jinnah"
+    },
+    {
+        "question": "What is the national language of Pakistan?",
+        "options": [
+            "English",
+            "Urdu",
+            "Punjabi",
+            "Sindhi"
+        ],
+        "answer": "Urdu"
+    },
+    {
+        "question": "Which Pakistani city is known as the city of lights?",
+        "options": [
+            "Lahore",
+            "Karachi",
+            "Islamabad",
+            "Multan"
+        ],
+        "answer": "Karachi"
+    },
+    {
+        "question": "Who was the first Prime Minister of Pakistan?",
+        "options": [
+            "Muhammad Ali Jinnah",
+            "Liaquat Ali Khan",
+            "Zulfikar Ali Bhutto",
+            "Benazir Bhutto"
+        ],
+        "answer": "Liaquat Ali Khan"
+    },
+    {
+        "question": "In which year was Pakistan created?",
+        "options": [
+            "1945",
+            "1947",
+            "1948",
+            "1950"
+        ],
+        "answer": "1947"
+    },
+    {
+        "question": "What is the highest mountain in Pakistan?",
+        "options": [
+            "K2",
+            "Nanga Parbat",
+            "Broad Peak",
+            "Rakaposhi"
+        ],
+        "answer": "K2"
+    },
+    {
+        "question": "Which sea borders Pakistan to the south?",
+        "options": [
+            "Arabian Sea",
+            "Red Sea",
+            "Caspian Sea",
+            "Mediterranean Sea"
+        ],
+        "answer": "Arabian Sea"
+    },
+    {
+        "question": "How many provinces are there in Pakistan?",
+        "options": [
+            "4",
+            "5",
+            "6",
+            "7"
+        ],
+        "answer": "4"
+    },
+    {
+        "question": "Who is the last prophet in Islam?",
+        "options": [
+            "Prophet Isa (Jesus)",
+            "Prophet Muhammad",
+            "Prophet Musa (Moses)",
+            "Prophet Ibrahim (Abraham)"
+        ],
+        "answer": "Prophet Muhammad"
+    },
+    {
+        "question": "Which holy book was revealed to Prophet Muhammad (PBUH)?",
+        "options": [
+            "Bible",
+            "Torah",
+            "Quran",
+            "Zabur"
+        ],
+        "answer": "Quran"
+    },
+    {
+        "question": "How many times a day is a Muslim required to pray?",
+        "options": [
+            "3",
+            "4",
+            "5",
+            "6"
+        ],
+        "answer": "5"
+    },
+    {
+        "question": "What is the first month of the Islamic calendar?",
+        "options": [
+            "Ramadan",
+            "Muharram",
+            "Shawwal",
+            "Dhul-Hijjah"
+        ],
+        "answer": "Muharram"
+    },
+    {
+        "question": "Which city is considered the holiest in Islam?",
+        "options": [
+            "Medina",
+            "Mecca",
+            "Jerusalem",
+            "Baghdad"
+        ],
+        "answer": "Mecca"
+    },
+    {
+        "question": "Which Pakistani national hero is known as 'The Lion of Punjab'?",
+        "options": [
+            "Allama Iqbal",
+            "Abdus Salam",
+            "M.M. Alam",
+            "Imran Khan"
+        ],
+        "answer": "M.M. Alam"
+    },
+    {
+        "question": "What is the national sport of Pakistan?",
+        "options": [
+            "Hockey",
+            "Cricket",
+            "Football",
+            "Squash"
+        ],
+        "answer": "Hockey"
+    },
+    {
+        "question": "Which Pakistani city is famous for Badshahi Mosque?",
+        "options": [
+            "Islamabad",
+            "Lahore",
+            "Karachi",
+            "Multan"
+        ],
+        "answer": "Lahore"
+    },
+    {
+        "question": "Which river is the longest in Pakistan?",
+        "options": [
+            "Indus",
+            "Jhelum",
+            "Chenab",
+            "Ravi"
+        ],
+        "answer": "Indus"
+    },
+    {
+        "question": "What is Zakat in Islam?",
+        "options": [
+            "Fasting",
+            "Charity",
+            "Prayer",
+            "Pilgrimage"
+        ],
+        "answer": "Charity"
+    },
+    {
+        "question": "Which prophet built the Kaaba in Mecca?",
+        "options": [
+            "Prophet Muhammad",
+            "Prophet Ibrahim",
+            "Prophet Musa",
+            "Prophet Isa"
+        ],
+        "answer": "Prophet Ibrahim"
+    },
+    {
+        "question": "During which month do Muslims observe fasting from dawn to sunset?",
+        "options": [
+            "Muharram",
+            "Ramadan",
+            "Shawwal",
+            "Dhul-Hijjah"
+        ],
+        "answer": "Ramadan"
+    },
+    {
+        "question": "Which Pakistani city is known as the City of Saints?",
+        "options": [
+            "Lahore",
+            "Multan",
+            "Peshawar",
+            "Quetta"
+        ],
+        "answer": "Multan"
+    },
+    {
+        "question": "Which Mughal emperor built Shalimar Gardens in Lahore?",
+        "options": [
+            "Akbar",
+            "Shah Jahan",
+            "Aurangzeb",
+            "Jahangir"
+        ],
+        "answer": "Shah Jahan"
+    },
+    {
+        "question": "Which is Pakistan's national flower?",
+        "options": [
+            "Rose",
+            "Jasmine",
+            "Lily",
+            "Sunflower"
+        ],
+        "answer": "Jasmine"
+    },
+    {
+        "question": "Which mountain range runs along northern Pakistan?",
+        "options": [
+            "Himalayas",
+            "Karakoram",
+            "Hindu Kush",
+            "All of the above"
+        ],
+        "answer": "All of the above"
+    },
+    {
+        "question": "Which is the largest province of Pakistan by area?",
+        "options": [
+            "Sindh",
+            "Punjab",
+            "Balochistan",
+            "Khyber Pakhtunkhwa"
+        ],
+        "answer": "Balochistan"
+    },
+    {
+        "question": "Saad",
+        "options": [
+            "1",
+            "2",
+            "3",
+            "4"
+        ],
+        "answer": "1"
+    }
+]
