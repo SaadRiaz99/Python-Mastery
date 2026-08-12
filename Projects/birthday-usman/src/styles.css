@@ -1,0 +1,367 @@
+.app {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background: radial-gradient(ellipse 120% 90% at 50% 20%, #071224 0%, #040a14 55%, #02060c 100%);
+}
+
+.particles-canvas,
+.tree-canvas,
+.leaves-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particles-canvas {
+  z-index: 1;
+}
+
+.scene {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+}
+
+.vignette {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, transparent 45%, rgba(2, 5, 10, 0.55) 100%);
+}
+
+.light-rays {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(
+    105deg,
+    transparent 28%,
+    rgba(200, 215, 255, 0.05) 40%,
+    transparent 52%,
+    rgba(200, 215, 255, 0.03) 64%,
+    transparent 76%
+  );
+  mix-blend-mode: screen;
+}
+
+.controls {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  text-align: center;
+  pointer-events: none;
+}
+
+.hint {
+  margin: 0;
+  color: rgba(230, 236, 250, 0.55);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.btn {
+  pointer-events: auto;
+  appearance: none;
+  border: 1px solid rgba(242, 200, 121, 0.4);
+  background: linear-gradient(180deg, rgba(24, 38, 58, 0.9), rgba(12, 20, 33, 0.92));
+  color: #f5efe4;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  padding: 14px 32px;
+  border-radius: 999px;
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.45),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  border-color: rgba(242, 200, 121, 0.85);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.55),
+    0 0 26px rgba(242, 200, 121, 0.28);
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.start-btn {
+  animation: pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+  50% {
+    transform: scale(1.045);
+    box-shadow: 0 14px 40px rgba(0, 0, 0, 0.55), 0 0 26px rgba(242, 200, 121, 0.3);
+  }
+}
+
+.birthday-message {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  pointer-events: none;
+  padding: 24px;
+}
+
+.message-content {
+  max-width: 780px;
+  opacity: 0;
+  transform: scale(0.96);
+  filter: blur(14px);
+  transition:
+    opacity 1.4s ease 0.3s,
+    transform 1.4s cubic-bezier(0.22, 1, 0.36, 1) 0.3s,
+    filter 1.4s ease 0.3s;
+}
+
+.birthday-message.visible .message-content {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+.msg-eyebrow {
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.62em;
+  text-indent: 0.62em;
+  text-transform: uppercase;
+  color: rgba(242, 200, 121, 0.9);
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 1s ease 0.9s,
+    transform 1s ease 0.9s;
+}
+
+.birthday-message.visible .msg-eyebrow {
+  opacity: 1;
+  transform: none;
+}
+
+.msg-name {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(46px, 8vw, 88px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  background: linear-gradient(120deg, #fff7d6, #f2c879 35%, #e8a84c 62%, #fff7d6);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow:
+    0 0 30px rgba(242, 200, 121, 0.35),
+    0 8px 30px rgba(0, 0, 0, 0.6);
+  animation: nameShimmer 6s ease-in-out infinite;
+  opacity: 0;
+  transform: scale(0.94);
+  transition:
+    opacity 1.2s ease 1.1s,
+    transform 1.2s cubic-bezier(0.22, 1, 0.36, 1) 1.1s;
+}
+
+@keyframes nameShimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.birthday-message.visible .msg-name {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.msg-divider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin: 18px 0 14px;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 1s ease 1.5s;
+}
+
+.birthday-message.visible .msg-divider {
+  opacity: 0.9;
+}
+
+.msg-tree {
+  opacity: 0.75;
+  filter: drop-shadow(0 0 10px rgba(140, 220, 120, 0.4));
+}
+
+.msg-cake {
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(242, 200, 121, 0.4));
+}
+
+.msg-wish {
+  margin: 0 auto;
+  max-width: 620px;
+  font-family: var(--serif);
+  font-size: clamp(19px, 2.6vw, 26px);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.55;
+  color: rgba(240, 238, 232, 0.92);
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.1s ease 1.8s,
+    transform 1.1s ease 1.8s;
+}
+
+.birthday-message.visible .msg-wish {
+  opacity: 1;
+  transform: none;
+}
+
+.msg-from {
+  margin: 24px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: rgba(242, 200, 121, 0.95);
+  opacity: 0;
+  transform: translateY(12px);
+  transition:
+    opacity 1.1s ease 2.2s,
+    transform 1.1s ease 2.2s;
+}
+
+.birthday-message.visible .msg-from {
+  opacity: 1;
+  transform: none;
+}
+
+.audio-control {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(12, 20, 33, 0.72);
+  color: rgba(240, 238, 232, 0.85);
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition:
+    border-color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.audio-control:hover {
+  border-color: rgba(242, 200, 121, 0.6);
+  background: rgba(20, 32, 50, 0.85);
+  transform: translateY(-1px);
+}
+
+.audio-icon {
+  font-size: 13px;
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 2px;
+  z-index: 7;
+  text-align: center;
+  font-size: 4px;
+  line-height: 1;
+  letter-spacing: 0.2em;
+  color: rgba(230, 236, 250, 0.18);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 640px) {
+  .controls {
+    bottom: 12%;
+  }
+
+  .btn {
+    min-height: 46px;
+    padding: 12px 26px;
+    font-size: 14px;
+  }
+
+  .audio-control {
+    right: 12px;
+    bottom: 12px;
+    min-height: 44px;
+    padding: 8px 12px;
+  }
+
+  .msg-wish br {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn {
+    transition: none;
+    animation: none;
+  }
+
+  .birthday-message .message-content,
+  .birthday-message .msg-eyebrow,
+  .birthday-message .msg-name,
+  .birthday-message .msg-divider,
+  .birthday-message .msg-wish,
+  .birthday-message .msg-from {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}
