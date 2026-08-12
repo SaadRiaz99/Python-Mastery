@@ -1,0 +1,728 @@
+{
+  "railway": "Pakistan Railways",
+  "country": "Pakistan",
+  "dataset_type": "passenger_trains",
+  "version": "2026",
+  "trains": [
+    {
+      "number": "1UP",
+      "name": "Khyber Mail",
+      "category": "Mail",
+      "from": "Karachi Cantt",
+      "to": "Peshawar Cantt",
+      "active": true
+    },
+    {
+      "number": "2DN",
+      "name": "Khyber Mail",
+      "category": "Mail",
+      "from": "Peshawar Cantt",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "3UP",
+      "name": "Bolan Mail",
+      "category": "Mail",
+      "from": "Karachi City",
+      "to": "Jacobabad Junction",
+      "active": false
+    },
+    {
+      "number": "4DN",
+      "name": "Bolan Mail",
+      "category": "Mail",
+      "from": "Jacobabad Junction",
+      "to": "Karachi City",
+      "active": false
+    },
+    {
+      "number": "5UP",
+      "name": "Green Line",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Margala",
+      "active": true
+    },
+    {
+      "number": "6DN",
+      "name": "Green Line",
+      "category": "Express",
+      "from": "Margala",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "7UP",
+      "name": "Tezgam",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "8DN",
+      "name": "Tezgam",
+      "category": "Express",
+      "from": "Rawalpindi",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "9UP",
+      "name": "Allama Iqbal Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Sialkot Junction",
+      "active": true
+    },
+    {
+      "number": "10DN",
+      "name": "Allama Iqbal Express",
+      "category": "Express",
+      "from": "Sialkot Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "11UP",
+      "name": "Hazara Express",
+      "category": "Express",
+      "from": "Karachi City",
+      "to": "Havelian",
+      "active": true
+    },
+    {
+      "number": "12DN",
+      "name": "Hazara Express",
+      "category": "Express",
+      "from": "Havelian",
+      "to": "Karachi City",
+      "active": true
+    },
+    {
+      "number": "13UP",
+      "name": "Awam Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Peshawar Cantt",
+      "active": true
+    },
+    {
+      "number": "14DN",
+      "name": "Awam Express",
+      "category": "Express",
+      "from": "Peshawar Cantt",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "15UP",
+      "name": "Karachi Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "16DN",
+      "name": "Karachi Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "17UP",
+      "name": "Millat Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Lala Musa Junction",
+      "active": true
+    },
+    {
+      "number": "18DN",
+      "name": "Millat Express",
+      "category": "Express",
+      "from": "Lala Musa Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "19UP",
+      "name": "Khushhal Khan Khattak Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Peshawar Cantt",
+      "active": true
+    },
+    {
+      "number": "20DN",
+      "name": "Khushhal Khan Khattak Express",
+      "category": "Express",
+      "from": "Peshawar Cantt",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "25UP",
+      "name": "Bahauddin Zakria Express",
+      "category": "Express",
+      "from": "Karachi City",
+      "to": "Multan Cantt",
+      "active": true
+    },
+    {
+      "number": "26DN",
+      "name": "Bahauddin Zakria Express",
+      "category": "Express",
+      "from": "Multan Cantt",
+      "to": "Karachi City",
+      "active": true
+    },
+    {
+      "number": "27UP",
+      "name": "Shalimar Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "28DN",
+      "name": "Shalimar Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "33UP",
+      "name": "Pak Business",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "34DN",
+      "name": "Pak Business",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "35UP",
+      "name": "Sir Sayyed Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "36DN",
+      "name": "Sir Sayyed Express",
+      "category": "Express",
+      "from": "Rawalpindi",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "37UP",
+      "name": "Fareed Express",
+      "category": "Express",
+      "from": "Karachi City",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "38DN",
+      "name": "Fareed Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Karachi City",
+      "active": true
+    },
+    {
+      "number": "39UP",
+      "name": "Jaffar Express",
+      "category": "Express",
+      "from": "Jacobabad Junction",
+      "to": "Peshawar Cantt",
+      "active": true
+    },
+    {
+      "number": "40DN",
+      "name": "Jaffar Express",
+      "category": "Express",
+      "from": "Peshawar Cantt",
+      "to": "Jacobabad Junction",
+      "active": true
+    },
+    {
+      "number": "41UP",
+      "name": "Karakoram Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "42DN",
+      "name": "Karakoram Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "43UP",
+      "name": "Shah Hussain Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "44DN",
+      "name": "Shah Hussain Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "45UP",
+      "name": "Pakistan Express",
+      "category": "Express",
+      "from": "Karachi Cantt",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "46DN",
+      "name": "Pakistan Express",
+      "category": "Express",
+      "from": "Rawalpindi",
+      "to": "Karachi Cantt",
+      "active": true
+    },
+    {
+      "number": "47UP",
+      "name": "Rehman Baba Express",
+      "category": "Express",
+      "from": "Karachi",
+      "to": "Peshawar",
+      "active": true
+    },
+    {
+      "number": "48DN",
+      "name": "Rehman Baba Express",
+      "category": "Express",
+      "from": "Peshawar",
+      "to": "Karachi",
+      "active": true
+    },
+    {
+      "number": "101UP",
+      "name": "Subak Raftar",
+      "category": "Passenger",
+      "from": "Lahore Junction",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "102DN",
+      "name": "Subak Raftar",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "103UP",
+      "name": "Subak Kharam",
+      "category": "Passenger",
+      "from": "Lahore Junction",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "104DN",
+      "name": "Subak Kharam",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "105UP",
+      "name": "Rawal Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "106DN",
+      "name": "Rawal Express",
+      "category": "Express",
+      "from": "Rawalpindi",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "107UP",
+      "name": "Islamabad Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "108DN",
+      "name": "Islamabad Express",
+      "category": "Express",
+      "from": "Margala",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "111UP",
+      "name": "Badar Express",
+      "category": "Passenger",
+      "from": "Faisalabad",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "112DN",
+      "name": "Badar Express",
+      "category": "Passenger",
+      "from": "Lahore Junction",
+      "to": "Faisalabad",
+      "active": true
+    },
+    {
+      "number": "113UP",
+      "name": "Ghouri Express",
+      "category": "Passenger",
+      "from": "Faisalabad",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "114DN",
+      "name": "Ghouri Express",
+      "category": "Passenger",
+      "from": "Lahore Junction",
+      "to": "Faisalabad",
+      "active": true
+    },
+    {
+      "number": "115UP",
+      "name": "Musa Pak Express",
+      "category": "Express",
+      "from": "Multan Cantt",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "116DN",
+      "name": "Musa Pak Express",
+      "category": "Express",
+      "from": "Lahore Junction",
+      "to": "Multan Cantt",
+      "active": true
+    },
+    {
+      "number": "121UP",
+      "name": "Ravi Express",
+      "category": "Passenger",
+      "from": "Lahore",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "122DN",
+      "name": "Ravi Express",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Lahore",
+      "active": true
+    },
+    {
+      "number": "125UP",
+      "name": "Lasani Express",
+      "category": "Passenger",
+      "from": "Lahore",
+      "to": "Sialkot",
+      "active": true
+    },
+    {
+      "number": "126DN",
+      "name": "Lasani Express",
+      "category": "Passenger",
+      "from": "Sialkot",
+      "to": "Lahore",
+      "active": true
+    },
+    {
+      "number": "127UP",
+      "name": "Mehr Express",
+      "category": "Passenger",
+      "from": "Multan Cantt",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "128DN",
+      "name": "Mehr Express",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Multan Cantt",
+      "active": true
+    },
+    {
+      "number": "129UP",
+      "name": "Thall Express",
+      "category": "Passenger",
+      "from": "Multan",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "130DN",
+      "name": "Thall Express",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Multan",
+      "active": true
+    },
+    {
+      "number": "133UP",
+      "name": "Kohat Express",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Kohat Cantt",
+      "active": true
+    },
+    {
+      "number": "134DN",
+      "name": "Kohat Express",
+      "category": "Passenger",
+      "from": "Kohat Cantt",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "135UP",
+      "name": "Chenab Express",
+      "category": "Passenger",
+      "from": "Sargodha Junction",
+      "to": "Lala Musa Junction",
+      "active": true
+    },
+    {
+      "number": "136DN",
+      "name": "Chenab Express",
+      "category": "Passenger",
+      "from": "Lala Musa Junction",
+      "to": "Sargodha Junction",
+      "active": true
+    },
+    {
+      "number": "145UP",
+      "name": "Sukkur Express",
+      "category": "Passenger",
+      "from": "Karachi City",
+      "to": "Jacobabad Junction",
+      "active": true
+    },
+    {
+      "number": "146DN",
+      "name": "Sukkur Express",
+      "category": "Passenger",
+      "from": "Jacobabad Junction",
+      "to": "Karachi City",
+      "active": true
+    },
+    {
+      "number": "147UP",
+      "name": "Mianwali Express",
+      "category": "Passenger",
+      "from": "Mari Indus",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "148DN",
+      "name": "Mianwali Express",
+      "category": "Passenger",
+      "from": "Lahore Junction",
+      "to": "Mari Indus",
+      "active": true
+    },
+    {
+      "number": "149UP",
+      "name": "Mehran Express",
+      "category": "Passenger",
+      "from": "Karachi City",
+      "to": "Mirpur Khas Junction",
+      "active": true
+    },
+    {
+      "number": "150DN",
+      "name": "Mehran Express",
+      "category": "Passenger",
+      "from": "Mirpur Khas Junction",
+      "to": "Karachi City",
+      "active": true
+    },
+    {
+      "number": "151UP",
+      "name": "Shah Latif Express",
+      "category": "Passenger",
+      "from": "Karachi City",
+      "to": "Mirpur Khas Junction",
+      "active": true
+    },
+    {
+      "number": "152DN",
+      "name": "Shah Latif Express",
+      "category": "Passenger",
+      "from": "Mirpur Khas Junction",
+      "to": "Karachi City",
+      "active": true
+    },
+    {
+      "number": "155UP",
+      "name": "Saman Sarkar Express",
+      "category": "Passenger",
+      "from": "Hyderabad Junction",
+      "to": "Mirpur Khas Junction",
+      "active": true
+    },
+    {
+      "number": "156DN",
+      "name": "Saman Sarkar Express",
+      "category": "Passenger",
+      "from": "Mirpur Khas Junction",
+      "to": "Hyderabad Junction",
+      "active": true
+    },
+    {
+      "number": "171UP",
+      "name": "Sialkot Express",
+      "category": "Passenger",
+      "from": "Lahore",
+      "to": "Sialkot",
+      "active": true
+    },
+    {
+      "number": "172DN",
+      "name": "Sialkot Express",
+      "category": "Passenger",
+      "from": "Sialkot",
+      "to": "Lahore",
+      "active": true
+    },
+    {
+      "number": "209UP",
+      "name": "Faiz Ahmad Faiz Passenger",
+      "category": "Passenger",
+      "from": "Lahore Junction",
+      "to": "Narowal Junction",
+      "active": true
+    },
+    {
+      "number": "210DN",
+      "name": "Faiz Ahmad Faiz Passenger",
+      "category": "Passenger",
+      "from": "Narowal Junction",
+      "to": "Lahore Junction",
+      "active": true
+    },
+    {
+      "number": "211UP",
+      "name": "Narowal Passenger",
+      "category": "Passenger",
+      "from": "Lahore",
+      "to": "Narowal",
+      "active": true
+    },
+    {
+      "number": "212DN",
+      "name": "Narowal Passenger",
+      "category": "Passenger",
+      "from": "Narowal",
+      "to": "Lahore",
+      "active": true
+    },
+    {
+      "number": "213UP",
+      "name": "Mohinjo Daro Passenger",
+      "category": "Passenger",
+      "from": "Sindh",
+      "to": "Mohinjo Daro",
+      "active": true
+    },
+    {
+      "number": "214DN",
+      "name": "Mohinjo Daro Passenger",
+      "category": "Passenger",
+      "from": "Mohinjo Daro",
+      "to": "Sindh",
+      "active": true
+    },
+    {
+      "number": "225UP",
+      "name": "Shaheen Passenger",
+      "category": "Passenger",
+      "from": "Wazirabad Junction",
+      "to": "Sialkot Junction",
+      "active": true
+    },
+    {
+      "number": "226DN",
+      "name": "Shaheen Passenger",
+      "category": "Passenger",
+      "from": "Sialkot Junction",
+      "to": "Wazirabad Junction",
+      "active": true
+    },
+    {
+      "number": "267UP",
+      "name": "Rawalpindi Passenger",
+      "category": "Passenger",
+      "from": "Rawalpindi",
+      "to": "Havelian",
+      "active": true
+    },
+    {
+      "number": "268DN",
+      "name": "Rawalpindi Passenger",
+      "category": "Passenger",
+      "from": "Havelian",
+      "to": "Rawalpindi",
+      "active": true
+    },
+    {
+      "number": "335UP",
+      "name": "Marvi Passenger",
+      "category": "Passenger",
+      "from": "Khokhrapar",
+      "to": "Mirpur Khas Junction",
+      "active": true
+    },
+    {
+      "number": "336DN",
+      "name": "Marvi Passenger",
+      "category": "Passenger",
+      "from": "Mirpur Khas Junction",
+      "to": "Khokhrapar",
+      "active": true
+    }
+  ]
+}
