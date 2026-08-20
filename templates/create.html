@@ -1,0 +1,385 @@
+{% extends "base.html" %}
+{% block title %}Create Wedding - WeddingInvite{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-amber-50/30" id="app">
+    <nav class="border-b border-gray-100 bg-white/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-4xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-full bg-gradient-to-br from-amber-500 to-rose-600"></div>
+                <span class="font-playfair text-lg font-bold text-gray-900">WeddingInvite</span>
+            </div>
+            <div class="text-sm text-gray-400" id="step-label">Step 1 of 3</div>
+        </div>
+    </nav>
+
+    <div class="mx-auto max-w-4xl px-6 py-8">
+        <!-- Progress Bar -->
+        <div class="mb-8">
+            <div class="flex gap-2">
+                <div class="h-1.5 flex-1 rounded-full bg-gradient-to-r from-amber-500 to-rose-500" id="prog-1"></div>
+                <div class="h-1.5 flex-1 rounded-full bg-gray-200" id="prog-2"></div>
+                <div class="h-1.5 flex-1 rounded-full bg-gray-200" id="prog-3"></div>
+            </div>
+        </div>
+
+        <!-- Step 1: Wedding Details -->
+        <div id="step-1" class="space-y-6">
+            <div>
+                <h2 class="mb-2 text-2xl font-bold text-gray-900">Wedding Details</h2>
+                <p class="text-gray-500">Enter the names of the couple and event details</p>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                    <label class="mb-2 block text-sm font-medium text-gray-700">Groom's Name *</label>
+                    <input type="text" id="groom_name" placeholder="Muhammad Ali"
+                           class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
+                </div>
+                <div>
+                    <label class="mb-2 block text-sm font-medium text-gray-700">Bride's Name *</label>
+                    <input type="text" id="bride_name" placeholder="Fatima Ahmed"
+                           class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
+                </div>
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-gray-700">Event Type *</label>
+                <div class="grid grid-cols-2 gap-3 sm:grid-cols-4" id="event-types">
+                    {% for et in ["mehndi", "barat", "nikah", "walima"] %}
+                    <button type="button" data-type="{{ et }}"
+                            class="event-btn rounded-xl border-2 p-3 text-center font-medium capitalize transition-all border-gray-200 text-gray-600 hover:border-gray-300"
+                            onclick="selectEventType('{{ et }}')">
+                        {{ et }}
+                    </button>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="grid gap-6 sm:grid-cols-2">
+                <div>
+                    <label class="mb-2 block text-sm font-medium text-gray-700">Date *</label>
+                    <input type="date" id="date"
+                           class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
+                </div>
+                <div>
+                    <label class="mb-2 block text-sm font-medium text-gray-700">Time *</label>
+                    <input type="time" id="time"
+                           class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
+                </div>
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-gray-700">Venue Name *</label>
+                <input type="text" id="venue" placeholder="Pearl Continental"
+                       class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-gray-700">Venue Address</label>
+                <input type="text" id="venue_address" placeholder="Karachi, Pakistan"
+                       class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
+            </div>
+
+            <div>
+                <label class="mb-2 block text-sm font-medium text-gray-700">Personal Message</label>
+                <textarea id="message" rows="3"
+                          class="w-full resize-none rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100"
+                >With great happiness, you are warmly invited to celebrate our special day. Your presence will make this occasion even more memorable.</textarea>
+            </div>
+        </div>
+
+        <!-- Step 2: Theme Selection -->
+        <div id="step-2" class="space-y-6 hidden">
+            <div>
+                <h2 class="mb-2 text-2xl font-bold text-gray-900">Choose Theme</h2>
+                <p class="text-gray-500">Select a beautiful Pakistani wedding theme</p>
+            </div>
+
+            <div class="grid gap-4 sm:grid-cols-2" id="theme-grid">
+                <button type="button" data-theme="mehndi" onclick="selectTheme('mehndi')"
+                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
+                    <div class="h-32" style="background: linear-gradient(135deg, #166534 0%, #15803d 50%, #d4a843 100%);">
+                        <div class="flex h-full items-center justify-center">
+                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Mehndi</span>
+                        </div>
+                    </div>
+                    <div class="p-4 text-left">
+                        <h3 class="font-semibold text-gray-900">Mehndi Theme</h3>
+                        <p class="text-sm text-gray-500">Elegant green with floral patterns</p>
+                    </div>
+                </button>
+
+                <button type="button" data-theme="barat" onclick="selectTheme('barat')"
+                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
+                    <div class="h-32" style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
+                        <div class="flex h-full items-center justify-center">
+                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Barat</span>
+                        </div>
+                    </div>
+                    <div class="p-4 text-left">
+                        <h3 class="font-semibold text-gray-900">Barat Theme</h3>
+                        <p class="text-sm text-gray-500">Deep maroon with royal gold</p>
+                    </div>
+                </button>
+
+                <button type="button" data-theme="nikah" onclick="selectTheme('nikah')"
+                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
+                    <div class="h-32" style="background: linear-gradient(135deg, #1c1917 0%, #44403c 50%, #b8860b 100%);">
+                        <div class="flex h-full items-center justify-center">
+                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Nikah</span>
+                        </div>
+                    </div>
+                    <div class="p-4 text-left">
+                        <h3 class="font-semibold text-gray-900">Nikah Theme</h3>
+                        <p class="text-sm text-gray-500">Ivory and white minimalism</p>
+                    </div>
+                </button>
+
+                <button type="button" data-theme="walima" onclick="selectTheme('walima')"
+                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
+                    <div class="h-32" style="background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #c4b5fd 100%);">
+                        <div class="flex h-full items-center justify-center">
+                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Walima</span>
+                        </div>
+                    </div>
+                    <div class="p-4 text-left">
+                        <h3 class="font-semibold text-gray-900">Walima Theme</h3>
+                        <p class="text-sm text-gray-500">Pastel modern luxury</p>
+                    </div>
+                </button>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+                <h3 class="mb-4 font-semibold text-gray-900">Preview</h3>
+                <div id="preview-box" class="overflow-hidden rounded-xl p-6 text-center"
+                     style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
+                    <div class="mb-2 text-sm text-white/80" id="preview-event-label">Barat Invitation</div>
+                    <div class="font-playfair text-2xl font-bold text-white md:text-3xl" id="preview-names">Groom &amp; Bride</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 3: Review -->
+        <div id="step-3" class="space-y-6 hidden">
+            <div>
+                <h2 class="mb-2 text-2xl font-bold text-gray-900">Review &amp; Create</h2>
+                <p class="text-gray-500">Review your wedding details before creating</p>
+            </div>
+
+            <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div>
+                        <span class="text-sm text-gray-400">Groom</span>
+                        <p class="font-medium text-gray-900" id="review-groom"></p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Bride</span>
+                        <p class="font-medium text-gray-900" id="review-bride"></p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Event</span>
+                        <p class="font-medium capitalize text-gray-900" id="review-event"></p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Theme</span>
+                        <p class="font-medium capitalize text-gray-900" id="review-theme"></p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Date</span>
+                        <p class="font-medium text-gray-900" id="review-date"></p>
+                    </div>
+                    <div>
+                        <span class="text-sm text-gray-400">Time</span>
+                        <p class="font-medium text-gray-900" id="review-time"></p>
+                    </div>
+                    <div class="sm:col-span-2">
+                        <span class="text-sm text-gray-400">Venue</span>
+                        <p class="font-medium text-gray-900" id="review-venue"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="review-preview" class="overflow-hidden rounded-2xl p-8 text-center"
+                 style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
+                <div class="mb-4 text-4xl">&#127800;</div>
+                <div class="font-playfair text-3xl font-bold text-white drop-shadow-lg md:text-4xl" id="review-preview-names"></div>
+                <div class="mt-4 text-lg text-white/80" id="review-preview-message"></div>
+            </div>
+
+            <div id="error-msg" class="hidden rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600"></div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mt-8 flex justify-between">
+            <button id="back-btn" onclick="prevStep()"
+                    class="invisible rounded-xl px-6 py-3 font-medium text-gray-600 transition-colors hover:bg-gray-100">
+                Back
+            </button>
+            <button id="next-btn" onclick="nextStep()"
+                    class="rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 px-8 py-3 font-semibold text-white shadow-lg transition-all hover:shadow-xl">
+                Continue
+            </button>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+let currentStep = 1;
+let eventType = 'barat';
+let selectedTheme = 'barat';
+
+const themeGradients = {
+    mehndi: 'linear-gradient(135deg, #166534 0%, #15803d 50%, #d4a843 100%)',
+    barat: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%)',
+    nikah: 'linear-gradient(135deg, #1c1917 0%, #44403c 50%, #b8860b 100%)',
+    walima: 'linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #c4b5fd 100%)'
+};
+
+function selectEventType(type) {
+    eventType = type;
+    selectedTheme = type;
+    document.querySelectorAll('.event-btn').forEach(btn => {
+        btn.className = btn.dataset.type === type
+            ? 'event-btn rounded-xl border-2 p-3 text-center font-medium capitalize transition-all border-amber-400 bg-amber-50 text-amber-700'
+            : 'event-btn rounded-xl border-2 p-3 text-center font-medium capitalize transition-all border-gray-200 text-gray-600 hover:border-gray-300';
+    });
+    selectTheme(type);
+}
+
+function selectTheme(theme) {
+    selectedTheme = theme;
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+        if (btn.dataset.theme === theme) {
+            btn.className = 'theme-btn group overflow-hidden rounded-2xl border-2 border-amber-400 shadow-lg ring-2 ring-amber-100 transition-all';
+        } else {
+            btn.className = 'theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300';
+        }
+    });
+    updatePreview();
+}
+
+function updatePreview() {
+    const groom = document.getElementById('groom_name').value || 'Groom';
+    const bride = document.getElementById('bride_name').value || 'Bride';
+    const eventLabel = eventType.charAt(0).toUpperCase() + eventType.slice(1);
+    document.getElementById('preview-event-label').textContent = eventLabel + ' Invitation';
+    document.getElementById('preview-names').textContent = groom + ' & ' + bride;
+    document.getElementById('preview-box').style.background = themeGradients[selectedTheme];
+}
+
+function showStep(step) {
+    for (let i = 1; i <= 3; i++) {
+        document.getElementById('step-' + i).classList.toggle('hidden', i !== step);
+        document.getElementById('prog-' + i).className = i <= step
+            ? 'h-1.5 flex-1 rounded-full bg-gradient-to-r from-amber-500 to-rose-500'
+            : 'h-1.5 flex-1 rounded-full bg-gray-200';
+    }
+    document.getElementById('step-label').textContent = 'Step ' + step + ' of 3';
+    document.getElementById('back-btn').classList.toggle('invisible', step === 1);
+
+    const nextBtn = document.getElementById('next-btn');
+    if (step === 3) {
+        nextBtn.textContent = 'Create Wedding';
+        nextBtn.onclick = handleSubmit;
+    } else {
+        nextBtn.textContent = 'Continue';
+        nextBtn.onclick = nextStep;
+    }
+
+    if (step === 3) populateReview();
+}
+
+function nextStep() {
+    if (currentStep === 1) {
+        const groom = document.getElementById('groom_name').value.trim();
+        const bride = document.getElementById('bride_name').value.trim();
+        const date = document.getElementById('date').value;
+        const time = document.getElementById('time').value;
+        const venue = document.getElementById('venue').value.trim();
+        if (!groom || !bride || !date || !time || !venue) {
+            showError('Please fill in all required fields');
+            return;
+        }
+    }
+    hideError();
+    currentStep++;
+    showStep(currentStep);
+}
+
+function prevStep() {
+    if (currentStep > 1) {
+        currentStep--;
+        showStep(currentStep);
+    }
+}
+
+function populateReview() {
+    document.getElementById('review-groom').textContent = document.getElementById('groom_name').value;
+    document.getElementById('review-bride').textContent = document.getElementById('bride_name').value;
+    document.getElementById('review-event').textContent = eventType;
+    document.getElementById('review-theme').textContent = selectedTheme;
+    document.getElementById('review-date').textContent = document.getElementById('date').value;
+    document.getElementById('review-time').textContent = document.getElementById('time').value;
+    const venue = document.getElementById('venue').value;
+    const addr = document.getElementById('venue_address').value;
+    document.getElementById('review-venue').textContent = addr ? venue + ', ' + addr : venue;
+
+    const groom = document.getElementById('groom_name').value;
+    const bride = document.getElementById('bride_name').value;
+    document.getElementById('review-preview-names').textContent = groom + ' & ' + bride;
+    document.getElementById('review-preview-message').textContent = document.getElementById('message').value;
+    document.getElementById('review-preview').style.background = themeGradients[selectedTheme];
+}
+
+function showError(msg) {
+    const el = document.getElementById('error-msg');
+    el.textContent = msg;
+    el.classList.remove('hidden');
+}
+
+function hideError() {
+    document.getElementById('error-msg').classList.add('hidden');
+}
+
+async function handleSubmit() {
+    hideError();
+    const nextBtn = document.getElementById('next-btn');
+    nextBtn.disabled = true;
+    nextBtn.textContent = 'Creating...';
+
+    try {
+        const response = await fetch('/api/weddings', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                groom_name: document.getElementById('groom_name').value.trim(),
+                bride_name: document.getElementById('bride_name').value.trim(),
+                event_type: eventType,
+                date: document.getElementById('date').value,
+                time: document.getElementById('time').value,
+                venue: document.getElementById('venue').value.trim(),
+                venue_address: document.getElementById('venue_address').value.trim(),
+                theme: selectedTheme,
+                message: document.getElementById('message').value.trim()
+            })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || 'Failed to create wedding');
+        window.location.href = '/dashboard?wedding=' + data.id;
+    } catch (err) {
+        showError(err.message);
+        nextBtn.disabled = false;
+        nextBtn.textContent = 'Create Wedding';
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    selectEventType('barat');
+    showStep(1);
+});
+</script>
+{% endblock %}
