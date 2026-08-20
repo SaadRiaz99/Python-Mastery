@@ -1,0 +1,135 @@
+{% extends "base.html" %}
+{% block title %}WeddingInvite - Modern Pakistani Wedding Invitations{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-white via-amber-50 to-rose-50">
+    <nav class="flex items-center justify-between px-6 py-4 md:px-12">
+        <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-gradient-to-br from-amber-500 to-rose-600"></div>
+            <span class="font-playfair text-xl font-bold text-gray-900">WeddingInvite</span>
+        </div>
+        <a href="/create"
+           class="rounded-full bg-gradient-to-r from-amber-600 to-rose-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+            Create Invitation
+        </a>
+    </nav>
+
+    <main class="mx-auto max-w-6xl px-6 py-12 md:py-24">
+        <div class="text-center fade-in-up">
+            <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm text-amber-700 scale-in">
+                <span>&#127800;</span>
+                <span>Modern Pakistani Wedding Invitations</span>
+            </div>
+
+            <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-7xl">
+                Create Beautiful
+                <span class="bg-gradient-to-r from-amber-600 via-rose-600 to-purple-600 bg-clip-text text-transparent">
+                    Personalized
+                </span>
+                <br>
+                Wedding Invitations
+            </h1>
+
+            <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-600 md:text-xl">
+                Upload your guest list, generate unique invitation links for each
+                guest, and share via WhatsApp. Elegant Pakistani themes with modern
+                luxury design.
+            </p>
+
+            <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <a href="/create"
+                   class="w-full rounded-full bg-gradient-to-r from-amber-600 to-rose-600 px-8 py-4 text-lg font-semibold text-white shadow-xl transition-all hover:shadow-2xl hover:scale-105 sm:w-auto">
+                    Start Creating
+                </a>
+                <a href="#features"
+                   class="w-full rounded-full border-2 border-gray-200 px-8 py-4 text-lg font-semibold text-gray-700 transition-all hover:border-amber-300 hover:text-amber-700 sm:w-auto">
+                    Learn More
+                </a>
+            </div>
+        </div>
+
+        <div class="mt-16 md:mt-24 fade-in-up" style="animation-delay: 0.3s;">
+            <div class="mx-auto grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-4">
+                {% set stats = [
+                    {"icon": "&#128197;", "label": "Multiple Themes", "count": "4"},
+                    {"icon": "&#128100;", "label": "Guest Management", "count": "100+"},
+                    {"icon": "&#128279;", "label": "Unique Links", "count": "Auto"},
+                    {"icon": "&#128172;", "label": "WhatsApp Sharing", "count": "Instant"}
+                ] %}
+                {% for stat in stats %}
+                <div class="rounded-2xl border border-amber-100 bg-white/80 p-4 text-center shadow-sm backdrop-blur-sm md:p-6 fade-in-up"
+                     style="animation-delay: {{ 0.4 + loop.index0 * 0.1 }}s;">
+                    <div class="mb-2 text-2xl md:text-3xl">{{ stat.icon | safe }}</div>
+                    <div class="text-2xl font-bold text-gray-900 md:text-3xl">{{ stat.count }}</div>
+                    <div class="text-sm text-gray-500">{{ stat.label }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div id="features" class="mt-24 md:mt-32">
+            <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">How It Works</h2>
+            <p class="mb-12 text-center text-gray-500">Three simple steps to share your wedding joy</p>
+
+            <div class="grid gap-8 md:grid-cols-3">
+                {% set features = [
+                    {"step": "01", "title": "Create Wedding", "desc": "Fill in your wedding details, select a beautiful Pakistani theme, and personalize your invitation message.", "gradient": "from-emerald-500 to-green-600"},
+                    {"step": "02", "title": "Upload Guests", "desc": "Upload a CSV file with your guest list. We validate the data and generate unique invitation links for each guest.", "gradient": "from-amber-500 to-orange-600"},
+                    {"step": "03", "title": "Share & Celebrate", "desc": "Send personalized invitations via WhatsApp. Each guest gets their own beautiful, personalized wedding card.", "gradient": "from-rose-500 to-purple-600"}
+                ] %}
+                {% for feature in features %}
+                <div class="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-xl fade-in-up"
+                     style="animation-delay: {{ 0.2 + loop.index0 * 0.15 }}s;">
+                    <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br {{ feature.gradient }} text-lg font-bold text-white">
+                        {{ feature.step }}
+                    </div>
+                    <h3 class="mb-3 text-xl font-bold text-gray-900">{{ feature.title }}</h3>
+                    <p class="text-gray-500">{{ feature.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mt-24 md:mt-32">
+            <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">Beautiful Pakistani Themes</h2>
+            <p class="mb-12 text-center text-gray-500">Choose from four elegant cultural themes</p>
+
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                {% set theme_cards = [
+                    {"name": "Mehndi", "colors": "from-green-700 via-green-600 to-amber-500", "desc": "Elegant green with floral patterns"},
+                    {"name": "Barat", "colors": "from-red-900 via-red-800 to-amber-500", "desc": "Deep maroon with royal gold"},
+                    {"name": "Nikah", "colors": "from-gray-800 via-gray-600 to-amber-500", "desc": "Ivory and white minimalism"},
+                    {"name": "Walima", "colors": "from-purple-800 via-purple-600 to-purple-300", "desc": "Pastel modern luxury"}
+                ] %}
+                {% for theme in theme_cards %}
+                <div class="group cursor-pointer fade-in-up" style="animation-delay: {{ 0.3 + loop.index0 * 0.1 }}s;">
+                    <div class="mb-4 aspect-[3/4] rounded-2xl bg-gradient-to-br {{ theme.colors }} p-6 shadow-lg transition-transform group-hover:scale-105">
+                        <div class="flex h-full flex-col items-center justify-center text-white">
+                            <div class="mb-2 text-4xl">&#127800;</div>
+                            <div class="font-playfair text-2xl font-bold">{{ theme.name }}</div>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">{{ theme.name }}</h3>
+                    <p class="text-sm text-gray-500">{{ theme.desc }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="mt-24 rounded-3xl bg-gradient-to-br from-amber-600 via-rose-600 to-purple-600 p-12 text-center text-white md:mt-32 fade-in-up">
+            <h2 class="mb-4 text-3xl font-bold md:text-4xl">Ready to Create Your Invitation?</h2>
+            <p class="mb-8 text-lg text-white/80">Start building your beautiful wedding invitation in minutes</p>
+            <a href="/create"
+               class="inline-block rounded-full bg-white px-8 py-4 text-lg font-semibold text-gray-900 shadow-xl transition-all hover:shadow-2xl hover:scale-105">
+                Get Started Now
+            </a>
+        </div>
+    </main>
+
+    <footer class="mt-24 border-t border-gray-100 bg-gray-50 py-8">
+        <div class="mx-auto max-w-6xl px-6 text-center text-sm text-gray-400">
+            &copy; 2026 WeddingInvite. Made with love for beautiful celebrations.
+        </div>
+    </footer>
+</div>
+{% endblock %}
