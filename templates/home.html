@@ -8,17 +8,20 @@
             <div class="h-8 w-8 rounded-full bg-gradient-to-br from-amber-500 to-rose-600"></div>
             <span class="font-playfair text-xl font-bold text-gray-900">WeddingInvite</span>
         </div>
-        <a href="/create"
-           class="rounded-full bg-gradient-to-r from-amber-600 to-rose-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
-            Create Invitation
-        </a>
+        <div class="flex items-center gap-4">
+            <a href="/check" class="text-sm text-gray-500 hover:text-amber-600 transition-colors font-medium">Check Invitation</a>
+            <a href="/create"
+               class="rounded-full bg-gradient-to-r from-amber-600 to-rose-600 px-6 py-2.5 text-sm font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-105">
+                Create Invitation
+            </a>
+        </div>
     </nav>
 
     <main class="mx-auto max-w-6xl px-6 py-12 md:py-24">
         <div class="text-center fade-in-up">
             <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-amber-200 bg-amber-50 px-4 py-1.5 text-sm text-amber-700 scale-in">
                 <span>&#127800;</span>
-                <span>Modern Pakistani Wedding Invitations</span>
+                <span>Pakistani Wedding Invitations</span>
             </div>
 
             <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 md:text-7xl">
@@ -32,8 +35,8 @@
 
             <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-600 md:text-xl">
                 Upload your guest list, generate unique invitation links for each
-                guest, and share via WhatsApp. Elegant Pakistani themes with modern
-                luxury design.
+                guest, and share via WhatsApp. Three stunning designs crafted for
+                Pakistani wedding traditions.
             </p>
 
             <div class="flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
@@ -51,7 +54,7 @@
         <div class="mt-16 md:mt-24 fade-in-up" style="animation-delay: 0.3s;">
             <div class="mx-auto grid max-w-4xl grid-cols-2 gap-4 md:grid-cols-4">
                 {% set stats = [
-                    {"icon": "&#128197;", "label": "Multiple Themes", "count": "4"},
+                    {"icon": "&#127912;", "label": "Card Designs", "count": "3"},
                     {"icon": "&#128100;", "label": "Guest Management", "count": "100+"},
                     {"icon": "&#128279;", "label": "Unique Links", "count": "Auto"},
                     {"icon": "&#128172;", "label": "WhatsApp Sharing", "count": "Instant"}
@@ -73,9 +76,9 @@
 
             <div class="grid gap-8 md:grid-cols-3">
                 {% set features = [
-                    {"step": "01", "title": "Create Wedding", "desc": "Fill in your wedding details, select a beautiful Pakistani theme, and personalize your invitation message.", "gradient": "from-emerald-500 to-green-600"},
-                    {"step": "02", "title": "Upload Guests", "desc": "Upload a CSV file with your guest list. We validate the data and generate unique invitation links for each guest.", "gradient": "from-amber-500 to-orange-600"},
-                    {"step": "03", "title": "Share & Celebrate", "desc": "Send personalized invitations via WhatsApp. Each guest gets their own beautiful, personalized wedding card.", "gradient": "from-rose-500 to-purple-600"}
+                    {"step": "01", "title": "Create Wedding", "desc": "Fill in your wedding details, choose one of three stunning designs — Royal, Modern, or Mehndi — and personalize your invitation.", "gradient": "from-emerald-500 to-green-600"},
+                    {"step": "02", "title": "Upload Guests", "desc": "Upload a CSV file with your guest list. We validate the data and generate unique, personalized invitation links for each guest.", "gradient": "from-amber-500 to-orange-600"},
+                    {"step": "03", "title": "Share & Celebrate", "desc": "Send personalized invitations via WhatsApp. Each guest gets their own beautiful wedding card with their name featured.", "gradient": "from-rose-500 to-purple-600"}
                 ] %}
                 {% for feature in features %}
                 <div class="group relative overflow-hidden rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all hover:shadow-xl fade-in-up"
@@ -91,28 +94,75 @@
         </div>
 
         <div class="mt-24 md:mt-32">
-            <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">Beautiful Pakistani Themes</h2>
-            <p class="mb-12 text-center text-gray-500">Choose from four elegant cultural themes</p>
+            <h2 class="mb-4 text-center text-3xl font-bold text-gray-900 md:text-4xl">Three Stunning Designs</h2>
+            <p class="mb-12 text-center text-gray-500">Each design crafted for a different Pakistani wedding celebration</p>
 
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                {% set theme_cards = [
-                    {"name": "Mehndi", "colors": "from-green-700 via-green-600 to-amber-500", "desc": "Elegant green with floral patterns"},
-                    {"name": "Barat", "colors": "from-red-900 via-red-800 to-amber-500", "desc": "Deep maroon with royal gold"},
-                    {"name": "Nikah", "colors": "from-gray-800 via-gray-600 to-amber-500", "desc": "Ivory and white minimalism"},
-                    {"name": "Walima", "colors": "from-purple-800 via-purple-600 to-purple-300", "desc": "Pastel modern luxury"}
-                ] %}
-                {% for theme in theme_cards %}
-                <div class="group cursor-pointer fade-in-up" style="animation-delay: {{ 0.3 + loop.index0 * 0.1 }}s;">
-                    <div class="mb-4 aspect-[3/4] rounded-2xl bg-gradient-to-br {{ theme.colors }} p-6 shadow-lg transition-transform group-hover:scale-105">
-                        <div class="flex h-full flex-col items-center justify-center text-white">
-                            <div class="mb-2 text-4xl">&#127800;</div>
-                            <div class="font-playfair text-2xl font-bold">{{ theme.name }}</div>
+            <div class="grid gap-6 sm:grid-cols-3">
+                <!-- Royal -->
+                <div class="group cursor-pointer fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="mb-4 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform group-hover:scale-105"
+                         style="background:linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)">
+                        <div class="flex h-full flex-col items-center justify-center p-6 text-center">
+                            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:300;color:#F5E6D0;letter-spacing:.03em;line-height:1.4">
+                                Saad &amp; Fatima
+                            </div>
+                            <div style="margin-top:8px;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#D4A84380">
+                                Royal Pakistani
+                            </div>
+                            <div style="margin-top:12px;width:40px;height:1px;background:linear-gradient(90deg,transparent,#D4A84360,transparent)"></div>
+                            <div style="margin-top:8px;font-size:7px;color:#D4A84350;letter-spacing:.1em">
+                                &#8226; Mughal-Inspired &#8226;
+                            </div>
                         </div>
                     </div>
-                    <h3 class="font-semibold text-gray-900">{{ theme.name }}</h3>
-                    <p class="text-sm text-gray-500">{{ theme.desc }}</p>
+                    <h3 class="font-semibold text-gray-900">&#128081; Royal Pakistani</h3>
+                    <p class="text-sm text-gray-500">Deep maroon with gold Mughal-inspired elegance</p>
+                    <p class="mt-1 text-xs text-amber-600 font-medium">Perfect for Barat &amp; Walima</p>
                 </div>
-                {% endfor %}
+
+                <!-- Modern -->
+                <div class="group cursor-pointer fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="mb-4 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform group-hover:scale-105"
+                         style="background:linear-gradient(135deg,#FAF8F5 0%,#E8DCC8 50%,#C9B99A 100%)">
+                        <div class="flex h-full flex-col items-center justify-center p-6 text-center">
+                            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:300;color:#3A3530;letter-spacing:.03em;line-height:1.4">
+                                Saad &amp; Fatima
+                            </div>
+                            <div style="margin-top:8px;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#B8963E80">
+                                Modern Elegant
+                            </div>
+                            <div style="margin-top:12px;width:40px;height:1px;background:linear-gradient(90deg,transparent,#C9B99A80,transparent)"></div>
+                            <div style="margin-top:8px;font-size:7px;color:#B8963E50;letter-spacing:.1em">
+                                &#8226; Clean &amp; Minimal &#8226;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">&#10024; Modern Elegant</h3>
+                    <p class="text-sm text-gray-500">Ivory and champagne with modern luxury</p>
+                    <p class="mt-1 text-xs text-amber-600 font-medium">Perfect for Nikah &amp; Reception</p>
+                </div>
+
+                <!-- Mehndi -->
+                <div class="group cursor-pointer fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="mb-4 aspect-[3/4] rounded-2xl overflow-hidden shadow-lg transition-transform group-hover:scale-105"
+                         style="background:linear-gradient(135deg,#0D5E2E 0%,#1A7A42 50%,#E8B830 100%)">
+                        <div class="flex h-full flex-col items-center justify-center p-6 text-center">
+                            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:18px;font-weight:300;color:#F0FDF4;letter-spacing:.03em;line-height:1.4">
+                                Saad &amp; Fatima
+                            </div>
+                            <div style="margin-top:8px;font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080">
+                                Mehndi Celebration
+                            </div>
+                            <div style="margin-top:12px;width:40px;height:1px;background:linear-gradient(90deg,transparent,#E8B83060,transparent)"></div>
+                            <div style="margin-top:8px;font-size:7px;color:#E8B83050;letter-spacing:.1em">
+                                &#8226; Traditional &#8226;
+                            </div>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold text-gray-900">&#127800; Mehndi</h3>
+                    <p class="text-sm text-gray-500">Emerald green with traditional Pakistani patterns</p>
+                    <p class="mt-1 text-xs text-amber-600 font-medium">Perfect for Mehndi Night</p>
+                </div>
             </div>
         </div>
 

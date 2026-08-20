@@ -14,7 +14,6 @@
     </nav>
 
     <div class="mx-auto max-w-4xl px-6 py-8">
-        <!-- Progress Bar -->
         <div class="mb-8">
             <div class="flex gap-2">
                 <div class="h-1.5 flex-1 rounded-full bg-gradient-to-r from-amber-500 to-rose-500" id="prog-1"></div>
@@ -33,7 +32,7 @@
             <div class="grid gap-6 sm:grid-cols-2">
                 <div>
                     <label class="mb-2 block text-sm font-medium text-gray-700">Groom's Name *</label>
-                    <input type="text" id="groom_name" placeholder="Muhammad Ali"
+                    <input type="text" id="groom_name" value="Saad Bin Riaz" placeholder="Muhammad Ali"
                            class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100">
                 </div>
                 <div>
@@ -89,73 +88,79 @@
             </div>
         </div>
 
-        <!-- Step 2: Theme Selection -->
+        <!-- Step 2: Design Selection -->
         <div id="step-2" class="space-y-6 hidden">
-            <div>
-                <h2 class="mb-2 text-2xl font-bold text-gray-900">Choose Theme</h2>
-                <p class="text-gray-500">Select a beautiful Pakistani wedding theme</p>
+            <div class="text-center">
+                <h2 class="mb-2 text-2xl font-bold text-gray-900">Choose Your Wedding Card Design</h2>
+                <p class="text-gray-500">Select a design that matches your celebration style</p>
             </div>
 
-            <div class="grid gap-4 sm:grid-cols-2" id="theme-grid">
-                <button type="button" data-theme="mehndi" onclick="selectTheme('mehndi')"
-                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
-                    <div class="h-32" style="background: linear-gradient(135deg, #166534 0%, #15803d 50%, #d4a843 100%);">
-                        <div class="flex h-full items-center justify-center">
-                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Mehndi</span>
+            <div class="grid gap-6 sm:grid-cols-3" id="design-grid">
+                <!-- Royal Pakistani -->
+                <button type="button" data-design="royal" onclick="selectDesign('royal')"
+                        class="design-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300 text-left">
+                    <div class="h-40 relative overflow-hidden" style="background:linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                            <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#F5E6D0;letter-spacing:.03em">Royal Pakistani</span>
+                            <span style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#D4A84380;margin-top:4px">&#127800; Premium &amp; Luxurious</span>
                         </div>
+                        <div style="position:absolute;top:8px;left:8px;width:20px;height:20px;border-top:1px solid #D4A84340;border-left:1px solid #D4A84340"></div>
+                        <div style="position:absolute;top:8px;right:8px;width:20px;height:20px;border-top:1px solid #D4A84340;border-right:1px solid #D4A84340"></div>
+                        <div style="position:absolute;bottom:8px;left:8px;width:20px;height:20px;border-bottom:1px solid #D4A84340;border-left:1px solid #D4A84340"></div>
+                        <div style="position:absolute;bottom:8px;right:8px;width:20px;height:20px;border-bottom:1px solid #D4A84340;border-right:1px solid #D4A84340"></div>
                     </div>
-                    <div class="p-4 text-left">
-                        <h3 class="font-semibold text-gray-900">Mehndi Theme</h3>
-                        <p class="text-sm text-gray-500">Elegant green with floral patterns</p>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900">&#128081; Royal Pakistani</h3>
+                        <p class="text-sm text-gray-500 mt-1">Deep maroon with gold Mughal-inspired elegance</p>
                     </div>
                 </button>
 
-                <button type="button" data-theme="barat" onclick="selectTheme('barat')"
-                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
-                    <div class="h-32" style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
-                        <div class="flex h-full items-center justify-center">
-                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Barat</span>
+                <!-- Modern Elegant -->
+                <button type="button" data-design="modern" onclick="selectDesign('modern')"
+                        class="design-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300 text-left">
+                    <div class="h-40 relative overflow-hidden" style="background:linear-gradient(135deg,#FAF8F5 0%,#E8DCC8 50%,#C9B99A 100%)">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                            <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#3A3530;letter-spacing:.03em">Modern Elegant</span>
+                            <span style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#B8963E80;margin-top:4px">&#10024; Clean &amp; Minimal</span>
                         </div>
+                        <div style="position:absolute;top:8px;left:8px;width:20px;height:20px;border-top:1px solid #C9B99A40;border-left:1px solid #C9B99A40"></div>
+                        <div style="position:absolute;top:8px;right:8px;width:20px;height:20px;border-top:1px solid #C9B99A40;border-right:1px solid #C9B99A40"></div>
+                        <div style="position:absolute;bottom:8px;left:8px;width:20px;height:20px;border-bottom:1px solid #C9B99A40;border-left:1px solid #C9B99A40"></div>
+                        <div style="position:absolute;bottom:8px;right:8px;width:20px;height:20px;border-bottom:1px solid #C9B99A40;border-right:1px solid #C9B99A40"></div>
                     </div>
-                    <div class="p-4 text-left">
-                        <h3 class="font-semibold text-gray-900">Barat Theme</h3>
-                        <p class="text-sm text-gray-500">Deep maroon with royal gold</p>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900">&#10024; Modern Elegant</h3>
+                        <p class="text-sm text-gray-500 mt-1">Ivory and champagne with modern luxury</p>
                     </div>
                 </button>
 
-                <button type="button" data-theme="nikah" onclick="selectTheme('nikah')"
-                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
-                    <div class="h-32" style="background: linear-gradient(135deg, #1c1917 0%, #44403c 50%, #b8860b 100%);">
-                        <div class="flex h-full items-center justify-center">
-                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Nikah</span>
+                <!-- Mehndi Celebration -->
+                <button type="button" data-design="mehndi" onclick="selectDesign('mehndi')"
+                        class="design-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300 text-left">
+                    <div class="h-40 relative overflow-hidden" style="background:linear-gradient(135deg,#0D5E2E 0%,#1A7A42 50%,#E8B830 100%)">
+                        <div class="absolute inset-0 flex flex-col items-center justify-center text-center p-4">
+                            <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:#F0FDF4;letter-spacing:.03em">Mehndi</span>
+                            <span style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;margin-top:4px">&#127800; Traditional &amp; Festive</span>
                         </div>
+                        <div style="position:absolute;top:8px;left:8px;width:20px;height:20px;border-top:1px solid #E8B83040;border-left:1px solid #E8B83040"></div>
+                        <div style="position:absolute;top:8px;right:8px;width:20px;height:20px;border-top:1px solid #E8B83040;border-right:1px solid #E8B83040"></div>
+                        <div style="position:absolute;bottom:8px;left:8px;width:20px;height:20px;border-bottom:1px solid #E8B83040;border-left:1px solid #E8B83040"></div>
+                        <div style="position:absolute;bottom:8px;right:8px;width:20px;height:20px;border-bottom:1px solid #E8B83040;border-right:1px solid #E8B83040"></div>
                     </div>
-                    <div class="p-4 text-left">
-                        <h3 class="font-semibold text-gray-900">Nikah Theme</h3>
-                        <p class="text-sm text-gray-500">Ivory and white minimalism</p>
-                    </div>
-                </button>
-
-                <button type="button" data-theme="walima" onclick="selectTheme('walima')"
-                        class="theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300">
-                    <div class="h-32" style="background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #c4b5fd 100%);">
-                        <div class="flex h-full items-center justify-center">
-                            <span class="font-playfair text-3xl font-bold text-white drop-shadow-lg">Walima</span>
-                        </div>
-                    </div>
-                    <div class="p-4 text-left">
-                        <h3 class="font-semibold text-gray-900">Walima Theme</h3>
-                        <p class="text-sm text-gray-500">Pastel modern luxury</p>
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900">&#127800; Mehndi Celebration</h3>
+                        <p class="text-sm text-gray-500 mt-1">Emerald green with traditional Pakistani patterns</p>
                     </div>
                 </button>
             </div>
 
+            <!-- Live Preview -->
             <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
                 <h3 class="mb-4 font-semibold text-gray-900">Preview</h3>
-                <div id="preview-box" class="overflow-hidden rounded-xl p-6 text-center"
-                     style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
-                    <div class="mb-2 text-sm text-white/80" id="preview-event-label">Barat Invitation</div>
-                    <div class="font-playfair text-2xl font-bold text-white md:text-3xl" id="preview-names">Groom &amp; Bride</div>
+                <div id="preview-box" class="overflow-hidden rounded-xl p-8 text-center transition-all duration-500"
+                     style="background:linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)">
+                    <div class="mb-2 text-sm" style="color:rgba(245,230,208,.7)" id="preview-event-label">Wedding Invitation</div>
+                    <div style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:#F5E6D0" id="preview-names">Groom &amp; Bride</div>
                 </div>
             </div>
         </div>
@@ -182,8 +187,8 @@
                         <p class="font-medium capitalize text-gray-900" id="review-event"></p>
                     </div>
                     <div>
-                        <span class="text-sm text-gray-400">Theme</span>
-                        <p class="font-medium capitalize text-gray-900" id="review-theme"></p>
+                        <span class="text-sm text-gray-400">Design</span>
+                        <p class="font-medium capitalize text-gray-900" id="review-design"></p>
                     </div>
                     <div>
                         <span class="text-sm text-gray-400">Date</span>
@@ -200,11 +205,11 @@
                 </div>
             </div>
 
-            <div id="review-preview" class="overflow-hidden rounded-2xl p-8 text-center"
-                 style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
+            <div id="review-preview" class="overflow-hidden rounded-2xl p-8 text-center transition-all duration-500"
+                 style="background:linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)">
                 <div class="mb-4 text-4xl">&#127800;</div>
-                <div class="font-playfair text-3xl font-bold text-white drop-shadow-lg md:text-4xl" id="review-preview-names"></div>
-                <div class="mt-4 text-lg text-white/80" id="review-preview-message"></div>
+                <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:#F5E6D0" id="review-preview-names"></div>
+                <div class="mt-4 text-lg" style="color:rgba(245,230,208,.7)" id="review-preview-message"></div>
             </div>
 
             <div id="error-msg" class="hidden rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-600"></div>
@@ -229,33 +234,42 @@
 <script>
 let currentStep = 1;
 let eventType = 'barat';
-let selectedTheme = 'barat';
+let selectedDesign = 'royal';
 
-const themeGradients = {
-    mehndi: 'linear-gradient(135deg, #166534 0%, #15803d 50%, #d4a843 100%)',
-    barat: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%)',
-    nikah: 'linear-gradient(135deg, #1c1917 0%, #44403c 50%, #b8860b 100%)',
-    walima: 'linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #c4b5fd 100%)'
+const designGradients = {
+    royal: 'linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)',
+    modern: 'linear-gradient(135deg,#FAF8F5 0%,#E8DCC8 50%,#C9B99A 100%)',
+    mehndi: 'linear-gradient(135deg,#0D5E2E 0%,#1A7A42 50%,#E8B830 100%)'
+};
+
+const designColors = {
+    royal: { text: '#F5E6D0', subtext: 'rgba(245,230,208,.7)' },
+    modern: { text: '#3A3530', subtext: 'rgba(90,80,70,.5)' },
+    mehndi: { text: '#F0FDF4', subtext: 'rgba(240,253,244,.6)' }
+};
+
+const designNames = {
+    royal: 'Royal Pakistani',
+    modern: 'Modern Elegant',
+    mehndi: 'Mehndi Celebration'
 };
 
 function selectEventType(type) {
     eventType = type;
-    selectedTheme = type;
     document.querySelectorAll('.event-btn').forEach(btn => {
         btn.className = btn.dataset.type === type
             ? 'event-btn rounded-xl border-2 p-3 text-center font-medium capitalize transition-all border-amber-400 bg-amber-50 text-amber-700'
             : 'event-btn rounded-xl border-2 p-3 text-center font-medium capitalize transition-all border-gray-200 text-gray-600 hover:border-gray-300';
     });
-    selectTheme(type);
 }
 
-function selectTheme(theme) {
-    selectedTheme = theme;
-    document.querySelectorAll('.theme-btn').forEach(btn => {
-        if (btn.dataset.theme === theme) {
-            btn.className = 'theme-btn group overflow-hidden rounded-2xl border-2 border-amber-400 shadow-lg ring-2 ring-amber-100 transition-all';
+function selectDesign(design) {
+    selectedDesign = design;
+    document.querySelectorAll('.design-btn').forEach(btn => {
+        if (btn.dataset.design === design) {
+            btn.className = 'design-btn group overflow-hidden rounded-2xl border-2 border-amber-400 shadow-lg ring-2 ring-amber-100 transition-all text-left';
         } else {
-            btn.className = 'theme-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300';
+            btn.className = 'design-btn group overflow-hidden rounded-2xl border-2 border-gray-200 transition-all hover:border-gray-300 text-left';
         }
     });
     updatePreview();
@@ -264,10 +278,14 @@ function selectTheme(theme) {
 function updatePreview() {
     const groom = document.getElementById('groom_name').value || 'Groom';
     const bride = document.getElementById('bride_name').value || 'Bride';
-    const eventLabel = eventType.charAt(0).toUpperCase() + eventType.slice(1);
-    document.getElementById('preview-event-label').textContent = eventLabel + ' Invitation';
+    const eventLabel = eventType.charAt(0).toUpperCase() + eventType.slice(1) + ' Invitation';
+    const colors = designColors[selectedDesign];
+
+    document.getElementById('preview-event-label').textContent = eventLabel;
+    document.getElementById('preview-event-label').style.color = colors.subtext;
     document.getElementById('preview-names').textContent = groom + ' & ' + bride;
-    document.getElementById('preview-box').style.background = themeGradients[selectedTheme];
+    document.getElementById('preview-names').style.color = colors.text;
+    document.getElementById('preview-box').style.background = designGradients[selectedDesign];
 }
 
 function showStep(step) {
@@ -304,6 +322,10 @@ function nextStep() {
             return;
         }
     }
+    if (currentStep === 2 && !selectedDesign) {
+        showError('Please select a design');
+        return;
+    }
     hideError();
     currentStep++;
     showStep(currentStep);
@@ -320,7 +342,7 @@ function populateReview() {
     document.getElementById('review-groom').textContent = document.getElementById('groom_name').value;
     document.getElementById('review-bride').textContent = document.getElementById('bride_name').value;
     document.getElementById('review-event').textContent = eventType;
-    document.getElementById('review-theme').textContent = selectedTheme;
+    document.getElementById('review-design').textContent = designNames[selectedDesign];
     document.getElementById('review-date').textContent = document.getElementById('date').value;
     document.getElementById('review-time').textContent = document.getElementById('time').value;
     const venue = document.getElementById('venue').value;
@@ -329,9 +351,13 @@ function populateReview() {
 
     const groom = document.getElementById('groom_name').value;
     const bride = document.getElementById('bride_name').value;
+    const colors = designColors[selectedDesign];
+
     document.getElementById('review-preview-names').textContent = groom + ' & ' + bride;
+    document.getElementById('review-preview-names').style.color = colors.text;
     document.getElementById('review-preview-message').textContent = document.getElementById('message').value;
-    document.getElementById('review-preview').style.background = themeGradients[selectedTheme];
+    document.getElementById('review-preview-message').style.color = colors.subtext;
+    document.getElementById('review-preview').style.background = designGradients[selectedDesign];
 }
 
 function showError(msg) {
@@ -362,7 +388,7 @@ async function handleSubmit() {
                 time: document.getElementById('time').value,
                 venue: document.getElementById('venue').value.trim(),
                 venue_address: document.getElementById('venue_address').value.trim(),
-                theme: selectedTheme,
+                theme: selectedDesign,
                 message: document.getElementById('message').value.trim()
             })
         });
@@ -379,6 +405,7 @@ async function handleSubmit() {
 
 document.addEventListener('DOMContentLoaded', () => {
     selectEventType('barat');
+    selectDesign('royal');
     showStep(1);
 });
 </script>

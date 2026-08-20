@@ -4,24 +4,52 @@ from datetime import datetime
 
 
 THEMES = {
+    "royal": {
+        "id": "royal",
+        "name": "Royal Pakistani",
+        "description": "Deep maroon with gold Mughal-inspired royal elegance",
+        "colors": {
+            "primary": "#5B0E1A",
+            "secondary": "#8B1A2B",
+            "accent": "#D4A843",
+            "background": "#3D0A10",
+            "text": "#F5E6D0",
+            "cardBg": "rgba(91, 14, 26, 0.95)",
+            "gradient": "linear-gradient(135deg, #3D0A10 0%, #5B0E1A 30%, #8B1A2B 60%, #D4A843 100%)",
+        },
+    },
+    "modern": {
+        "id": "modern",
+        "name": "Modern Elegant",
+        "description": "Ivory and champagne with clean modern luxury",
+        "colors": {
+            "primary": "#C9B99A",
+            "secondary": "#E8DCC8",
+            "accent": "#B8963E",
+            "background": "#FAF8F5",
+            "text": "#3A3530",
+            "cardBg": "rgba(255, 255, 255, 0.98)",
+            "gradient": "linear-gradient(135deg, #FAF8F5 0%, #E8DCC8 50%, #C9B99A 100%)",
+        },
+    },
     "mehndi": {
         "id": "mehndi",
-        "name": "Mehndi",
-        "description": "Elegant green aesthetic with floral patterns and gold details",
+        "name": "Mehndi Celebration",
+        "description": "Emerald green and yellow with traditional Pakistani floral patterns",
         "colors": {
-            "primary": "#166534",
-            "secondary": "#15803d",
-            "accent": "#d4a843",
-            "background": "#f0fdf4",
-            "text": "#14532d",
+            "primary": "#0D5E2E",
+            "secondary": "#1A7A42",
+            "accent": "#E8B830",
+            "background": "#F0FDF4",
+            "text": "#0A3D1C",
             "cardBg": "rgba(255, 255, 255, 0.95)",
-            "gradient": "linear-gradient(135deg, #166534 0%, #15803d 50%, #d4a843 100%)",
+            "gradient": "linear-gradient(135deg, #0D5E2E 0%, #1A7A42 50%, #E8B830 100%)",
         },
     },
     "barat": {
         "id": "barat",
-        "name": "Barat",
-        "description": "Deep maroon with luxury gold typography and royal elegance",
+        "name": "Barat (Legacy)",
+        "description": "Deep maroon with luxury gold",
         "colors": {
             "primary": "#7f1d1d",
             "secondary": "#991b1b",
@@ -34,8 +62,8 @@ THEMES = {
     },
     "nikah": {
         "id": "nikah",
-        "name": "Nikah",
-        "description": "Ivory and white with Islamic geometric patterns, minimal and elegant",
+        "name": "Nikah (Legacy)",
+        "description": "Ivory and white minimalism",
         "colors": {
             "primary": "#1c1917",
             "secondary": "#44403c",
@@ -48,8 +76,8 @@ THEMES = {
     },
     "walima": {
         "id": "walima",
-        "name": "Walima",
-        "description": "White and pastel aesthetic with modern luxury design",
+        "name": "Walima (Legacy)",
+        "description": "Purple pastel luxury",
         "colors": {
             "primary": "#5b21b6",
             "secondary": "#7c3aed",
@@ -63,8 +91,24 @@ THEMES = {
 }
 
 
+CARD_DESIGNS = ["royal", "modern", "mehndi"]
+
+DESIGN_TEMPLATE_MAP = {
+    "royal": "invite_royal.html",
+    "modern": "invite_modern.html",
+    "mehndi": "invite_mehndi.html",
+    "barat": "invite_royal.html",
+    "nikah": "invite_modern.html",
+    "walima": "invite_mehndi.html",
+}
+
+
 def get_theme(theme_id: str) -> dict:
-    return THEMES.get(theme_id, THEMES["barat"])
+    return THEMES.get(theme_id, THEMES["royal"])
+
+
+def get_template_for_theme(theme_id: str) -> str:
+    return DESIGN_TEMPLATE_MAP.get(theme_id, "invite_royal.html")
 
 
 def generate_slug(length: int = 8) -> str:

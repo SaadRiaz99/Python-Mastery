@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@200;300;400;500;600&family=Great+Vibes&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Outfit',sans-serif;background:#E8F5E9;overflow-x:hidden}
+        .fc{font-family:'Cormorant Garamond',Georgia,serif}
+        .fs{font-family:'Great Vibes',cursive}
+        .fu{font-family:'Noto Nastaliq Urdu',serif;direction:rtl}
+
+        @keyframes fadeInUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+        @keyframes scaleIn{from{opacity:0;transform:scale(.9)}to{opacity:1;transform:scale(1)}}
+        @keyframes shimmer{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+        @keyframes petalDrift{0%{transform:translateY(-10vh) rotate(0deg);opacity:0}10%{opacity:.6}90%{opacity:.6}100%{transform:translateY(105vh) rotate(720deg) translateX(60px);opacity:0}}
+        @keyframes borderPulse{0%,100%{border-color:rgba(13,94,46,.12)}50%{border-color:rgba(13,94,46,.25)}}
+        @keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(13,94,46,.06)}50%{box-shadow:0 0 40px rgba(13,94,46,.12)}}
+
+        .a1{animation:fadeInUp .8s cubic-bezier(.22,1,.36,1) .1s both}
+        .a2{animation:fadeInUp .8s cubic-bezier(.22,1,.36,1) .25s both}
+        .a3{animation:fadeInUp .8s cubic-bezier(.22,1,.36,1) .4s both}
+        .a4{animation:scaleIn .9s cubic-bezier(.34,1.56,.64,1) .35s both}
+        .a5{animation:fadeInUp .8s cubic-bezier(.22,1,.36,1) .55s both}
+        .a6{animation:fadeInUp .8s cubic-bezier(.22,1,.36,1) .7s both}
+        .a7{animation:fadeInUp .8s cubic-bezier(.22,1,.36,1) .85s both}
+
+        .green-text{
+            background:linear-gradient(135deg,#0D5E2E,#1A7A42,#E8B830,#1A7A42,#0D5E2E);
+            background-size:200% 200%;
+            animation:shimmer 4s ease infinite;
+            -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text
+        }
+        .green-line{height:1px;background:linear-gradient(90deg,transparent,#1A7A42,transparent)}
+        .green-line-v{width:1px;background:linear-gradient(180deg,transparent,#1A7A42,transparent)}
+
+        .bg-petal{position:fixed;pointer-events:none;z-index:50;animation:petalDrift linear infinite;opacity:0;font-size:16px}
+        .bp1{left:8%;animation-duration:13s;animation-delay:0s;color:#0D5E2E}
+        .bp2{left:22%;animation-duration:16s;animation-delay:2s;color:#E8B830;font-size:12px}
+        .bp3{left:42%;animation-duration:12s;animation-delay:4s;color:#0D5E2E;font-size:18px}
+        .bp4{left:62%;animation-duration:15s;animation-delay:1s;color:#E8B830;font-size:14px}
+        .bp5{left:78%;animation-duration:14s;animation-delay:3s;color:#0D5E2E;font-size:10px}
+        .bp6{left:52%;animation-duration:17s;animation-delay:5s;color:#1A7A42;font-size:13px}
+
+        .card-outer{width:100%;max-width:520px;margin:20px auto;animation:glowPulse 4s ease-in-out infinite}
+        .card{position:relative;background:#0A3D1C;border:2px solid rgba(232,184,48,.15);border-radius:4px;overflow:hidden;animation:borderPulse 4s ease-in-out infinite}
+        .card-inner{position:relative;padding:48px 28px;min-height:780px;display:flex;flex-direction:column;align-items:center;text-align:center}
+
+        .border-ornament{position:absolute;pointer-events:none}
+        .bo-outer{top:6px;left:6px;right:6px;bottom:6px;border:1px solid rgba(232,184,48,.1)}
+        .bo-inner{top:12px;left:12px;right:12px;bottom:12px;border:.5px dashed rgba(232,184,48,.08)}
+
+        .corner-svg{position:absolute;width:65px;height:65px;pointer-events:none;opacity:.4}
+        .corner-svg svg{width:100%;height:100%}
+        .c-tl{top:3px;left:3px}
+        .c-tr{top:3px;right:3px;transform:scaleX(-1)}
+        .c-bl{bottom:3px;left:3px;transform:scaleY(-1)}
+        .c-br{bottom:3px;right:3px;transform:scale(-1)}
+
+        .mehndi-pattern{position:absolute;pointer-events:none;opacity:.12}
+        .mp-tl{top:0;left:0;width:120px;height:120px}
+        .mp-tr{top:0;right:0;width:120px;height:120px;transform:scaleX(-1)}
+        .mp-bl{bottom:0;left:0;width:120px;height:120px;transform:scaleY(-1)}
+        .mp-br{bottom:0;right:0;width:120px;height:120px;transform:scale(-1)}
+
+        @media(max-width:480px){
+            .card-inner{padding:32px 18px;min-height:680px}
+            .corner-svg{width:45px;height:45px}
+            .mehndi-pattern{width:80px;height:80px}
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Petals -->
+    <div class="bg-petal bp1">&#127800;</div>
+    <div class="bg-petal bp2">&#127793;</div>
+    <div class="bg-petal bp3">&#127800;</div>
+    <div class="bg-petal bp4">&#127801;</div>
+    <div class="bg-petal bp5">&#127800;</div>
+    <div class="bg-petal bp6">&#127793;</div>
+
+    {% if not_found %}
+    <div style="min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px">
+        <div class="text-center" style="color:#F0FDF4">
+            <div style="font-size:48px;margin-bottom:16px">&#128531;</div>
+            <h2 class="fc" style="font-size:24px;margin-bottom:8px">Invitation Not Found</h2>
+            <p style="color:#F0FDF480;margin-bottom:24px;font-size:14px">This invitation link is invalid or has expired.</p>
+            <a href="/" style="display:inline-block;padding:12px 28px;border:1px solid #1A7A42;color:#E8B830;border-radius:4px;text-decoration:none;font-size:13px;text-transform:uppercase;letter-spacing:.15em">Go Home</a>
+        </div>
+    </div>
+    {% else %}
+
+    <!-- ===== THE MEHNDI CARD ===== -->
+    <div class="card-outer a4">
+        <div class="card">
+            <div class="card-inner">
+
+                <div class="border-ornament bo-outer"></div>
+                <div class="border-ornament bo-inner"></div>
+
+                <!-- Corner Ornaments -->
+                <div class="corner-svg c-tl"><svg viewBox="0 0 65 65" fill="none"><path d="M0 0L65 0M0 0L0 65" stroke="#E8B830" stroke-width=".5" opacity=".3"/><path d="M0 0 C4 12 12 20 28 28 C20 20 12 12 0 0Z" fill="#E8B830" opacity=".1"/><circle cx="4" cy="4" r="2" fill="#E8B830" opacity=".4"/><circle cx="14" cy="3" r="1" fill="#1A7A42" opacity=".3"/><circle cx="3" cy="14" r="1" fill="#1A7A42" opacity=".3"/></svg></div>
+                <div class="corner-svg c-tr"><svg viewBox="0 0 65 65" fill="none"><path d="M0 0L65 0M0 0L0 65" stroke="#E8B830" stroke-width=".5" opacity=".3"/><circle cx="4" cy="4" r="2" fill="#E8B830" opacity=".4"/></svg></div>
+                <div class="corner-svg c-bl"><svg viewBox="0 0 65 65" fill="none"><path d="M0 0L65 0M0 0L0 65" stroke="#E8B830" stroke-width=".5" opacity=".3"/><circle cx="4" cy="4" r="2" fill="#E8B830" opacity=".4"/></svg></div>
+                <div class="corner-svg c-br"><svg viewBox="0 0 65 65" fill="none"><path d="M0 0L65 0M0 0L0 65" stroke="#E8B830" stroke-width=".5" opacity=".3"/><circle cx="4" cy="4" r="2" fill="#E8B830" opacity=".4"/></svg></div>
+
+                <!-- Mehndi Floral Patterns -->
+                <div class="mehndi-pattern mp-tl">
+                    <svg viewBox="0 0 120 120" fill="none">
+                        <path d="M0 0 C10 20 20 40 50 50 C35 48 20 38 12 24 C6 12 0 0 0 0Z" fill="#E8B830" opacity=".15"/>
+                        <path d="M0 0 C20 10 40 20 50 50 C48 35 38 20 24 12 C12 6 0 0 0 0Z" fill="#1A7A42" opacity=".12"/>
+                        <path d="M0 14 Q14 14 24 28" stroke="#E8B830" stroke-width=".6" fill="none" opacity=".3"/>
+                        <path d="M14 0 Q14 14 28 24" stroke="#E8B830" stroke-width=".6" fill="none" opacity=".3"/>
+                        <!-- Flower -->
+                        <circle cx="8" cy="8" r="4" fill="#E8B830" opacity=".15"/>
+                        <ellipse cx="8" cy="8" rx="6" ry="3" transform="rotate(0 8 8)" fill="#1A7A42" opacity=".1"/>
+                        <ellipse cx="8" cy="8" rx="6" ry="3" transform="rotate(60 8 8)" fill="#1A7A42" opacity=".1"/>
+                        <ellipse cx="8" cy="8" rx="6" ry="3" transform="rotate(120 8 8)" fill="#1A7A42" opacity=".1"/>
+                        <circle cx="8" cy="8" r="2" fill="#E8B830" opacity=".3"/>
+                        <circle cx="20" cy="5" r="1.5" fill="#E8B830" opacity=".2"/>
+                        <circle cx="5" cy="20" r="1.5" fill="#E8B830" opacity=".2"/>
+                        <circle cx="32" cy="10" r="1" fill="#1A7A42" opacity=".15"/>
+                        <circle cx="10" cy="32" r="1" fill="#1A7A42" opacity=".15"/>
+                        <!-- Paisley hint -->
+                        <path d="M28 4 C28 4 34 8 32 16 C30 24 22 26 18 22 C14 18 16 10 22 6 C28 4 28 4 28 4Z" fill="#E8B830" opacity=".06" stroke="#E8B830" stroke-width=".3" opacity=".15"/>
+                    </svg>
+                </div>
+                <div class="mehndi-pattern mp-tr"><svg viewBox="0 0 120 120" fill="none"><path d="M0 0 C10 20 20 40 50 50 C35 48 20 38 12 24 C6 12 0 0 0 0Z" fill="#E8B830" opacity=".15"/><circle cx="8" cy="8" r="4" fill="#E8B830" opacity=".15"/><circle cx="8" cy="8" r="2" fill="#E8B830" opacity=".3"/><circle cx="20" cy="5" r="1.5" fill="#E8B830" opacity=".2"/></svg></div>
+                <div class="mehndi-pattern mp-bl"><svg viewBox="0 0 120 120" fill="none"><path d="M0 0 C10 20 20 40 50 50 C35 48 20 38 12 24 C6 12 0 0 0 0Z" fill="#E8B830" opacity=".15"/><circle cx="8" cy="8" r="4" fill="#E8B830" opacity=".15"/><circle cx="8" cy="8" r="2" fill="#E8B830" opacity=".3"/></svg></div>
+                <div class="mehndi-pattern mp-br"><svg viewBox="0 0 120 120" fill="none"><path d="M0 0 C10 20 20 40 50 50 C35 48 20 38 12 24 C6 12 0 0 0 0Z" fill="#E8B830" opacity=".15"/><circle cx="8" cy="8" r="4" fill="#E8B830" opacity=".15"/><circle cx="8" cy="8" r="2" fill="#E8B830" opacity=".3"/></svg></div>
+
+                <!-- ===== CONTENT ===== -->
+                <div class="relative z-10 flex flex-col items-center w-full" style="max-width:380px">
+
+                    <!-- Bismillah -->
+                    <div class="a1 mb-2">
+                        <p class="fu" style="font-size:15px;color:#F0FDF4;line-height:2.2">&#1576;&#1616;&#1587;&#1618;&#1605;&#1616; &#1575;&#1604;&#1604;&#1617;&#1607;&#1616; &#1575;&#1604;&#1585;&#1617;&#1614;&#1581;&#1618;&#1605;&#1614;&#1606;&#1616; &#1575;&#1604;&#1585;&#1617;&#1614;&#1581;&#1616;&#1610;&#1605;&#1616;</p>
+                    </div>
+
+                    <!-- Top Ornament - Mehndi Style -->
+                    <div class="a2 mb-3">
+                        <svg width="140" height="28" viewBox="0 0 140 28" fill="none">
+                            <path d="M70 26 C70 26 58 16 42 16 C26 16 18 22 8 20" stroke="#E8B830" stroke-width=".6" fill="none" opacity=".35"/>
+                            <path d="M70 26 C70 26 82 16 98 16 C114 16 122 22 132 20" stroke="#E8B830" stroke-width=".6" fill="none" opacity=".35"/>
+                            <path d="M70 26 C70 26 62 10 48 8 C34 6 24 12 14 10" stroke="#1A7A42" stroke-width=".4" fill="none" opacity=".2"/>
+                            <path d="M70 26 C70 26 78 10 92 8 C106 6 116 12 126 10" stroke="#1A7A42" stroke-width=".4" fill="none" opacity=".2"/>
+                            <circle cx="70" cy="4" r="3" fill="#E8B830" opacity=".3"/>
+                            <circle cx="70" cy="4" r="1.5" fill="#E8B830" opacity=".5"/>
+                            <circle cx="56" cy="12" r="1.2" fill="#1A7A42" opacity=".25"/>
+                            <circle cx="84" cy="12" r="1.2" fill="#1A7A42" opacity=".25"/>
+                            <circle cx="42" cy="14" r=".8" fill="#E8B830" opacity=".2"/>
+                            <circle cx="98" cy="14" r=".8" fill="#E8B830" opacity=".2"/>
+                        </svg>
+                    </div>
+
+                    <!-- Celebration Badge -->
+                    <div class="a2 mb-4" style="padding:5px 16px;border:1px solid rgba(232,184,48,.2);border-radius:20px;background:rgba(232,184,48,.06)">
+                        <p style="font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#E8B830;font-weight:400">&#127800; Mehndi Celebration</p>
+                    </div>
+
+                    <!-- Together -->
+                    <p class="a2 fc" style="font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#F0FDF480;font-weight:300;margin-bottom:18px">Together with their families</p>
+
+                    <!-- GROOM -->
+                    <div class="a3" style="width:100%">
+                        <p class="fc" style="font-size:36px;font-weight:300;letter-spacing:.03em;color:#F0FDF4;line-height:1.2">{{ wedding.groom_name }}</p>
+                    </div>
+
+                    <!-- Ampersand -->
+                    <div class="a4 my-2">
+                        <span class="fs green-text" style="font-size:36px">&amp;</span>
+                    </div>
+
+                    <!-- BRIDE -->
+                    <div class="a3" style="width:100%">
+                        <p class="fc" style="font-size:36px;font-weight:300;letter-spacing:.03em;color:#F0FDF4;line-height:1.2">{{ wedding.bride_name }}</p>
+                    </div>
+
+                    <!-- Divider -->
+                    <div style="display:flex;align-items:center;gap:12px;margin:18px 0;width:100%;max-width:240px" class="a5">
+                        <div class="green-line" style="flex:1"></div>
+                        <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <circle cx="9" cy="9" r="3" fill="none" stroke="#E8B830" stroke-width=".6" opacity=".4"/>
+                            <circle cx="9" cy="9" r="1.2" fill="#E8B830" opacity=".4"/>
+                            <circle cx="9" cy="3" r=".8" fill="#1A7A42" opacity=".3"/>
+                            <circle cx="9" cy="15" r=".8" fill="#1A7A42" opacity=".3"/>
+                            <circle cx="3" cy="9" r=".8" fill="#1A7A42" opacity=".3"/>
+                            <circle cx="15" cy="9" r=".8" fill="#1A7A42" opacity=".3"/>
+                        </svg>
+                        <div class="green-line" style="flex:1"></div>
+                    </div>
+
+                    <!-- Request -->
+                    <p class="a5 fc" style="font-size:14px;font-style:italic;color:#F0FDF4A0;line-height:1.7;margin-bottom:20px">
+                        Come celebrate love, happiness,<br>and beautiful memories with us!
+                    </p>
+
+                    <!-- ===== EVENT DETAILS ===== -->
+                    <div class="a6" style="width:100%;max-width:340px;margin-bottom:18px;padding:18px;border:1px solid rgba(232,184,48,.1);border-radius:3px;background:rgba(232,184,48,.04)">
+                        <!-- Date -->
+                        <div style="display:flex;align-items:center;justify-center;gap:20px;margin-bottom:12px">
+                            <div class="text-center">
+                                <p class="fc" style="font-size:28px;font-weight:300;color:#F0FDF4">{{ wedding.date.split('-')[2] | int }}</p>
+                                <p style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;font-weight:300;margin-top:2px">Day</p>
+                            </div>
+                            <div class="green-line-v" style="height:30px"></div>
+                            <div class="text-center">
+                                {% set months=['','January','February','March','April','May','June','July','August','September','October','November','December'] %}
+                                <p class="fc" style="font-size:14px;font-weight:300;color:#F0FDF4CC;text-transform:uppercase;letter-spacing:.06em">{{ months[wedding.date.split('-')[1] | int] }}</p>
+                                <p style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;font-weight:300;margin-top:2px">Month</p>
+                            </div>
+                            <div class="green-line-v" style="height:30px"></div>
+                            <div class="text-center">
+                                <p class="fc" style="font-size:28px;font-weight:300;color:#F0FDF4">{{ wedding.date.split('-')[0] }}</p>
+                                <p style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;font-weight:300;margin-top:2px">Year</p>
+                            </div>
+                        </div>
+
+                        <div class="green-line" style="width:50%;margin:0 auto 12px"></div>
+
+                        <!-- Time -->
+                        <div class="text-center" style="margin-bottom:8px">
+                            <p style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;font-weight:300;margin-bottom:2px">Time</p>
+                            <p class="fc" style="font-size:15px;color:#F0FDF4CC">{{ formatted_time }}</p>
+                        </div>
+                        <div class="green-line" style="width:25%;margin:0 auto 8px"></div>
+
+                        <!-- Venue -->
+                        <div class="text-center" style="margin-bottom:8px">
+                            <p style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;font-weight:300;margin-bottom:2px">Venue</p>
+                            <p class="fc" style="font-size:15px;color:#F0FDF4CC">{{ wedding.venue }}</p>
+                            {% if wedding.venue_address %}
+                            <p style="font-size:11px;color:#F0FDF460;margin-top:3px">{{ wedding.venue_address }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="green-line" style="width:25%;margin:0 auto 8px"></div>
+
+                        <!-- Event -->
+                        <div class="text-center">
+                            <p style="font-size:8px;letter-spacing:.2em;text-transform:uppercase;color:#E8B83080;font-weight:300;margin-bottom:2px">Event</p>
+                            <p class="fc" style="font-size:15px;color:#F0FDF4CC;text-transform:capitalize">{{ wedding.event_type }}</p>
+                        </div>
+                    </div>
+
+                    <!-- Message -->
+                    {% if wedding.message %}
+                    <div class="a6" style="margin-bottom:14px;padding:0 8px">
+                        <svg style="width:14px;height:14px;margin:0 auto 6px;display:block;color:#E8B83050" viewBox="0 0 24 24" fill="currentColor"><path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/></svg>
+                        <p class="fc" style="font-size:12px;font-style:italic;color:#F0FDF4A0;line-height:1.6">"{{ wedding.message }}"</p>
+                    </div>
+                    {% endif %}
+
+                    <!-- Personal Note -->
+                    <div class="a6" style="margin-bottom:14px;padding:0 8px">
+                        <p class="fc" style="font-size:13px;font-style:italic;color:#F0FDF4BB;line-height:1.7">
+                            Dear <span style="font-weight:600;color:#E8B830">{{ guest.name }}</span>,<br><br>
+                            {% if guest.with_family %}
+                            With hearts full of joy, we warmly invite you <strong style="color:#E8B830">&amp; your family</strong> to share in our celebration.
+                            {% else %}
+                            With hearts full of joy, we warmly invite you to share in our celebration.
+                            {% endif %}
+                            Your presence will make our special day even more memorable.
+                        </p>
+                    </div>
+
+                    <!-- Bottom Ornament -->
+                    <div class="a7 mb-3">
+                        <svg width="100" height="18" viewBox="0 0 100 18" fill="none">
+                            <path d="M50 16 C50 16 40 8 28 8 C16 8 8 14 3 12" stroke="#E8B830" stroke-width=".5" fill="none" opacity=".3"/>
+                            <path d="M50 16 C50 16 60 8 72 8 C84 8 92 14 97 12" stroke="#E8B830" stroke-width=".5" fill="none" opacity=".3"/>
+                            <circle cx="50" cy="4" r="1.5" fill="#E8B830" opacity=".3"/>
+                            <circle cx="50" cy="4" r=".7" fill="#E8B830" opacity=".5"/>
+                        </svg>
+                    </div>
+
+                    <!-- RSVP -->
+                    <div id="rsvp-section" class="a7" style="display:flex;gap:10px;margin-bottom:14px">
+                        <button onclick="handleRsvp('accept')" id="btn-accept" style="padding:8px 20px;border:1px solid rgba(232,184,48,.3);background:transparent;color:#E8B830;border-radius:2px;font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-family:'Outfit',sans-serif;font-weight:300;cursor:pointer;transition:all .3s" onmouseover="this.style.background='#E8B830';this.style.color='#0A3D1C'" onmouseout="this.style.background='transparent';this.style.color='#E8B830'">Accept</button>
+                        <button onclick="handleRsvp('decline')" style="padding:8px 20px;border:1px solid rgba(240,253,244,.15);background:transparent;color:#F0FDF480;border-radius:2px;font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-family:'Outfit',sans-serif;font-weight:300;cursor:pointer;transition:all .3s" onmouseover="this.style.borderColor='#E8B830';this.style.color='#E8B830'" onmouseout="this.style.borderColor='rgba(240,253,244,.15)';this.style.color='#F0FDF480'">Decline</button>
+                    </div>
+
+                    <div id="rsvp-note" style="display:none;width:100%;max-width:280px;margin-bottom:14px">
+                        <textarea id="rsvp-msg" rows="2" placeholder="Leave a note for the couple..." style="width:100%;resize:none;border:1px solid rgba(232,184,48,.15);background:rgba(232,184,48,.05);border-radius:2px;padding:8px 12px;font-size:11px;color:#F0FDF4;font-family:'Outfit',sans-serif;outline:none"></textarea>
+                        <button onclick="submitRsvp()" style="margin-top:8px;padding:8px 20px;background:linear-gradient(135deg,#0D5E2E,#1A7A42);color:#fff;border:none;border-radius:2px;font-size:10px;text-transform:uppercase;letter-spacing:.15em;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .3s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">Send</button>
+                    </div>
+
+                    <div id="rsvp-thanks" style="display:none;text-align:center;margin-bottom:14px">
+                        <p class="fc" style="font-size:14px;color:#E8B830">Thank you! &#127800;</p>
+                    </div>
+
+                    <!-- Share -->
+                    <div class="a7" style="display:flex;gap:10px;margin-bottom:8px">
+                        <a id="whatsapp-btn" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;background:#25D366;color:#fff;border-radius:20px;font-size:11px;font-weight:300;text-decoration:none;transition:all .3s" onmouseover="this.style.opacity='.85'" onmouseout="this.style.opacity='1'">
+                            <svg style="width:13px;height:13px" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                            Share
+                        </a>
+                        <button onclick="copyLink()" id="copy-btn" style="display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border:1px solid rgba(240,253,244,.15);background:transparent;color:#F0FDF480;border-radius:20px;font-size:11px;font-weight:300;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .3s" onmouseover="this.style.borderColor='#E8B830';this.style.color='#E8B830'" onmouseout="this.style.borderColor='rgba(240,253,244,.15)';this.style.color='#F0FDF480'">
+                            <svg style="width:13px;height:13px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                            Copy Link
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% endif %}
+
+    <script>
+        const groomName='{{ wedding.groom_name }}',brideName='{{ wedding.bride_name }}',guestName='{{ guest.name }}',guestSlug='{{ guest.unique_slug }}',guestId='{{ guest.id }}';
+        const base=window.location.origin,inviteLink=base+'/invite/'+guestSlug;
+        document.title=groomName+' & '+brideName+' - Wedding Invitation';
+        const waMsg=encodeURIComponent('Assalam-o-Alaikum '+guestName+'!\n\nYou are warmly invited to the wedding celebration of '+groomName+' & '+brideName+'.\n\nPlease view your personal invitation here:\n\n'+inviteLink);
+        document.getElementById('whatsapp-btn').href='https://wa.me/?text='+waMsg;
+        function copyLink(){navigator.clipboard.writeText(inviteLink).then(()=>{const b=document.getElementById('copy-btn'),o=b.innerHTML;b.innerHTML='<svg style="width:13px;height:13px" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 13l4 4L19 7"/></svg> Copied!';setTimeout(()=>b.innerHTML=o,2000)})}
+        function handleRsvp(s){document.getElementById('rsvp-section').style.display='none';if(s==='decline'){document.getElementById('rsvp-thanks').style.display='block';document.getElementById('rsvp-thanks').innerHTML='<p class="fc" style="font-size:14px;color:#F0FDF4A0">We understand. Thank you.</p>';saveRsvp('declined','')}else{document.getElementById('rsvp-note').style.display='block'}}
+        async function submitRsvp(){const note=document.getElementById('rsvp-msg').value;document.getElementById('rsvp-note').style.display='none';document.getElementById('rsvp-thanks').style.display='block';document.getElementById('rsvp-thanks').innerHTML='<p class="fc" style="font-size:14px;color:#E8B830">Thank you! We look forward to seeing you. &#127800;</p>';await saveRsvp('accepted',note)}
+        async function saveRsvp(status,note){try{await fetch('/api/guests/'+guestId+'/rsvp',{method:'PATCH',headers:{'Content-Type':'application/json'},body:JSON.stringify({status,note})})}catch(e){}}
+    </script>
+</body>
+</html>

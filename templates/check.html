@@ -1,0 +1,188 @@
+{% extends "base.html" %}
+{% block title %}Check Invitation{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-white via-amber-50 to-rose-50">
+    <nav class="flex items-center justify-between px-6 py-4 md:px-12">
+        <div class="flex items-center gap-2">
+            <div class="h-8 w-8 rounded-full bg-gradient-to-br from-amber-500 to-rose-600"></div>
+            <span class="font-playfair text-xl font-bold text-gray-900">WeddingInvite</span>
+        </div>
+        <a href="/" class="text-sm text-gray-500 hover:text-amber-600 transition-colors">Home</a>
+    </nav>
+
+    <main class="mx-auto max-w-2xl px-6 py-12 md:py-20">
+
+        <!-- CHECK FORM -->
+        <div id="check-form" class="text-center">
+            <div class="mb-6 text-6xl">&#128141;</div>
+            <h1 class="text-3xl font-bold text-gray-900 md:text-4xl mb-2">Welcome!</h1>
+            <p class="text-gray-500 mb-8">Enter your details to check if you're invited</p>
+
+            <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm text-left">
+                <div class="space-y-4">
+                    <div>
+                        <label class="mb-1 block text-sm font-medium text-gray-700">Your Full Name</label>
+                        <input type="text" id="guest-name" placeholder="e.g. Saad Bin Riaz"
+                               class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100"
+                               onkeydown="if(event.key==='Enter')document.getElementById('guest-contact').focus()">
+                    </div>
+                    <div>
+                        <label class="mb-1 block text-sm font-medium text-gray-700">Phone Number</label>
+                        <input type="tel" id="guest-contact" placeholder="e.g. 03001234567"
+                               class="w-full rounded-xl border border-gray-200 px-4 py-3 text-gray-900 transition-colors placeholder:text-gray-300 focus:border-amber-400 focus:outline-none focus:ring-2 focus:ring-amber-100"
+                               onkeydown="if(event.key==='Enter')checkInvitation()">
+                    </div>
+                </div>
+
+                <div class="mt-6 text-center">
+                    <button onclick="checkInvitation()" id="check-btn"
+                            class="w-full rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:shadow-xl hover:scale-[1.01]">
+                        Check My Invitation
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- LOADING -->
+        <div id="loading" class="hidden text-center py-16">
+            <div class="h-10 w-10 animate-spin rounded-full border-4 border-amber-200 border-t-amber-600 mx-auto"></div>
+            <p class="mt-4 text-gray-400">Checking...</p>
+        </div>
+
+        <!-- NOT INVITED -->
+        <div id="not-invited" class="hidden text-center py-12">
+            <div class="mb-4 text-6xl">&#128532;</div>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">Not on the Guest List</h2>
+            <p class="text-gray-500 mb-6">We couldn't find an invitation under your name and number.<br>Please contact the host for more information.</p>
+            <button onclick="resetForm()" class="rounded-xl border-2 border-gray-200 px-6 py-3 font-medium text-gray-600 transition-all hover:border-amber-300 hover:text-amber-700">
+                Try Again
+            </button>
+        </div>
+
+        <!-- INVITED - SHOW CARD -->
+        <div id="invited-card" class="hidden">
+            <div class="text-center mb-8">
+                <div class="mb-3 text-6xl animate-bounce">&#127880;</div>
+                <h2 id="invite-heading" class="text-3xl font-bold text-gray-900 mb-2"></h2>
+                <p id="invite-sub" class="text-gray-500"></p>
+            </div>
+
+            <!-- Wedding Card Preview -->
+            <div id="card-preview" class="mx-auto max-w-md overflow-hidden rounded-3xl shadow-2xl transition-all duration-500">
+                <div id="card-body" class="p-8 text-center min-h-[400px] flex flex-col items-center justify-center">
+                    <!-- filled by JS -->
+                </div>
+            </div>
+
+            <div class="text-center mt-8 space-y-3">
+                <a id="view-invite-btn" href="#" class="inline-block rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg transition-all hover:shadow-xl">
+                    View Full Invitation &#8594;
+                </a>
+                <div>
+                    <button onclick="resetForm()" class="text-sm text-gray-400 hover:text-amber-600 transition-colors underline">
+                        Check another name
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const themeGradients = {
+    royal: 'linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)',
+    modern: 'linear-gradient(135deg,#FAF8F5 0%,#E8DCC8 50%,#C9B99A 100%)',
+    mehndi: 'linear-gradient(135deg,#0D5E2E 0%,#1A7A42 50%,#E8B830 100%)',
+    barat: 'linear-gradient(135deg,#3D0A10 0%,#5B0E1A 30%,#8B1A2B 60%,#D4A843 100%)',
+    nikah: 'linear-gradient(135deg,#FAF8F5 0%,#E8DCC8 50%,#C9B99A 100%)',
+    walima: 'linear-gradient(135deg,#0D5E2E 0%,#1A7A42 50%,#E8B830 100%)'
+};
+const themeTextColors = {
+    royal: { main: '#F5E6D0', sub: 'rgba(245,230,208,.7)', accent: '#D4A843' },
+    modern: { main: '#3A3530', sub: 'rgba(90,80,70,.5)', accent: '#B8963E' },
+    mehndi: { main: '#F0FDF4', sub: 'rgba(240,253,244,.6)', accent: '#E8B830' },
+    barat: { main: '#F5E6D0', sub: 'rgba(245,230,208,.7)', accent: '#D4A843' },
+    nikah: { main: '#3A3530', sub: 'rgba(90,80,70,.5)', accent: '#B8963E' },
+    walima: { main: '#F0FDF4', sub: 'rgba(240,253,244,.6)', accent: '#E8B830' }
+};
+
+async function checkInvitation() {
+    const name = document.getElementById('guest-name').value.trim();
+    const contact = document.getElementById('guest-contact').value.trim();
+    if (!name) { document.getElementById('guest-name').focus(); return; }
+
+    show('loading');
+    document.getElementById('check-btn').disabled = true;
+
+    try {
+        const params = new URLSearchParams({ name });
+        if (contact) params.set('contact', contact);
+        const res = await fetch('/api/guests/lookup?' + params.toString());
+        const data = await res.json();
+
+        if (!data.found || !data.guests.length) {
+            show('not-invited');
+            return;
+        }
+
+        const g = data.guests[0];
+        const w = g.wedding;
+        if (!w) { show('not-invited'); return; }
+
+        const base = window.location.origin;
+        const slug = g.unique_slug;
+        const theme = w.theme || 'royal';
+        const grad = themeGradients[theme] || themeGradients.royal;
+        const colors = themeTextColors[theme] || themeTextColors.royal;
+
+        const heading = document.getElementById('invite-heading');
+        const sub = document.getElementById('invite-sub');
+        if (g.with_family) {
+            heading.innerHTML = 'You & Your Family Are Invited!';
+            sub.textContent = w.groom_name + ' & ' + w.bride_name + ' are delighted to welcome you and your family';
+        } else {
+            heading.innerHTML = 'You Are Invited!';
+            sub.textContent = w.groom_name + ' & ' + w.bride_name + ' are delighted to welcome you';
+        }
+
+        const cardBody = document.getElementById('card-body');
+        cardBody.style.background = grad;
+        cardBody.innerHTML = `
+            <div style="font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:${colors.accent};opacity:.6;margin-bottom:8px">${w.event_type.charAt(0).toUpperCase() + w.event_type.slice(1)} Invitation</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:11px;color:${colors.sub};margin-bottom:16px">Together with their families</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:300;color:${colors.main};line-height:1.3">${w.groom_name}</div>
+            <div style="font-size:24px;color:${colors.accent};margin:6px 0">&amp;</div>
+            <div style="font-family:'Cormorant Garamond',Georgia,serif;font-size:28px;font-weight:300;color:${colors.main};line-height:1.3">${w.bride_name}</div>
+            <div style="width:60px;height:1px;background:linear-gradient(90deg,transparent,${colors.accent},transparent);margin:16px auto"></div>
+            <div style="font-size:11px;color:${colors.sub};margin-bottom:4px">${w.date} &middot; ${w.time}</div>
+            <div style="font-size:11px;color:${colors.sub}">${w.venue}</div>
+            ${g.with_family ? `<div style="margin-top:16px;padding:6px 16px;border:1px solid ${colors.accent}30;border-radius:20px;font-size:10px;color:${colors.accent};letter-spacing:.1em;text-transform:uppercase">You + Family</div>` : ''}
+        `;
+
+        document.getElementById('view-invite-btn').href = base + '/invite/' + slug;
+        show('invited-card');
+
+    } catch (err) {
+        show('not-invited');
+    } finally {
+        document.getElementById('check-btn').disabled = false;
+    }
+}
+
+function show(id) {
+    ['check-form', 'loading', 'not-invited', 'invited-card'].forEach(s => {
+        document.getElementById(s).classList.toggle('hidden', s !== id);
+    });
+}
+
+function resetForm() {
+    show('check-form');
+    document.getElementById('guest-name').value = '';
+    document.getElementById('guest-contact').value = '';
+    document.getElementById('guest-name').focus();
+}
+</script>
+{% endblock %}
