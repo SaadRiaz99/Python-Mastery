@@ -1,0 +1,253 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - WeddingInvite{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gradient-to-br from-gray-50 to-amber-50/30" id="app">
+    <nav class="border-b border-gray-100 bg-white/80 backdrop-blur-sm">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+            <div class="flex items-center gap-2">
+                <div class="h-8 w-8 rounded-full bg-gradient-to-br from-amber-500 to-rose-600"></div>
+                <span class="font-playfair text-lg font-bold text-gray-900">WeddingInvite</span>
+            </div>
+            <a href="/" class="text-sm text-gray-500 hover:text-amber-600 transition-colors">Home</a>
+        </div>
+    </nav>
+
+    <div class="mx-auto max-w-6xl px-6 py-8">
+        <!-- Loading State -->
+        <div id="loading-state" class="flex min-h-[60vh] items-center justify-center">
+            <div class="h-8 w-8 animate-spin rounded-full border-4 border-amber-200 border-t-amber-600"></div>
+        </div>
+
+        <!-- Not Found -->
+        <div id="not-found" class="hidden flex min-h-[60vh] flex-col items-center justify-center text-center">
+            <div class="mb-4 text-6xl">&#128531;</div>
+            <h2 class="mb-2 text-2xl font-bold text-gray-900">Wedding Not Found</h2>
+            <p class="mb-6 text-gray-500">The wedding you're looking for doesn't exist.</p>
+            <a href="/create" class="rounded-xl bg-gradient-to-r from-amber-600 to-rose-600 px-6 py-3 font-semibold text-white shadow-lg">
+                Create New Wedding
+            </a>
+        </div>
+
+        <!-- Dashboard Content -->
+        <div id="dashboard-content" class="hidden space-y-8">
+            <!-- Wedding Header -->
+            <div id="wedding-header" class="overflow-hidden rounded-3xl p-8 text-center text-white"
+                 style="background: linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%);">
+                <div class="mb-2 text-4xl">&#127800;</div>
+                <h1 class="font-playfair text-3xl font-bold md:text-4xl" id="header-names"></h1>
+                <p class="mt-2 text-lg text-white/80" id="header-details"></p>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid gap-4 sm:grid-cols-3">
+                <div class="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+                    <div class="text-3xl font-bold text-amber-600" id="stat-guests">0</div>
+                    <div class="text-sm text-gray-500">Total Guests</div>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+                    <div class="text-3xl font-bold text-rose-600" id="stat-invitations">0</div>
+                    <div class="text-sm text-gray-500">Invitation Links</div>
+                </div>
+                <div class="rounded-2xl border border-gray-100 bg-white p-6 text-center shadow-sm">
+                    <div class="text-3xl font-bold text-purple-600" id="stat-theme">Barat</div>
+                    <div class="text-sm text-gray-500">Theme</div>
+                </div>
+            </div>
+
+            <!-- CSV Upload -->
+            <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+                <h2 class="mb-4 text-lg font-bold text-gray-900">Upload Guest List (CSV)</h2>
+                <p class="mb-4 text-sm text-gray-500">
+                    CSV must have <code class="rounded bg-gray-100 px-1 py-0.5">name</code> and
+                    <code class="rounded bg-gray-100 px-1 py-0.5">contact</code> columns.
+                </p>
+                <div class="flex items-center gap-4">
+                    <label class="cursor-pointer rounded-xl border-2 border-dashed border-gray-300 px-6 py-3 text-sm font-medium text-gray-600 transition-all hover:border-amber-400 hover:text-amber-600">
+                        Choose CSV File
+                        <input type="file" accept=".csv" class="hidden" id="csv-input" onchange="handleCsvUpload(event)">
+                    </label>
+                    <span id="csv-filename" class="text-sm text-gray-400"></span>
+                </div>
+                <div id="csv-message" class="mt-4 hidden rounded-xl p-4 text-sm"></div>
+            </div>
+
+            <!-- Guest Management -->
+            <div class="rounded-2xl border border-gray-100 bg-white p-6 shadow-sm">
+                <div class="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+                    <h2 class="text-lg font-bold text-gray-900">Guest Management</h2>
+                    <input type="text" id="guest-search" placeholder="Search guests..."
+                           oninput="filterGuests()"
+                           class="w-full rounded-xl border border-gray-200 px-4 py-2.5 text-sm transition-colors focus:border-amber-400 focus:outline-none sm:w-64">
+                </div>
+
+                <div id="no-guests" class="py-12 text-center text-gray-400">
+                    <div class="mb-2 text-4xl">&#128100;</div>
+                    <p>No guests yet. Upload a CSV file to get started.</p>
+                </div>
+
+                <div id="guest-table" class="hidden overflow-x-auto">
+                    <table class="w-full text-left text-sm">
+                        <thead>
+                            <tr class="border-b border-gray-100">
+                                <th class="pb-3 font-medium text-gray-500">Name</th>
+                                <th class="pb-3 font-medium text-gray-500">Contact</th>
+                                <th class="pb-3 font-medium text-gray-500">Invitation Link</th>
+                                <th class="pb-3 font-medium text-gray-500">Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="guest-list"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const weddingId = new URLSearchParams(window.location.search).get('wedding');
+let weddingData = null;
+let guestsData = [];
+
+const themeGradients = {
+    mehndi: 'linear-gradient(135deg, #166534 0%, #15803d 50%, #d4a843 100%)',
+    barat: 'linear-gradient(135deg, #7f1d1d 0%, #991b1b 50%, #d4a843 100%)',
+    nikah: 'linear-gradient(135deg, #1c1917 0%, #44403c 50%, #b8860b 100%)',
+    walima: 'linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #c4b5fd 100%)'
+};
+
+async function init() {
+    if (!weddingId) {
+        showNotFound();
+        return;
+    }
+    try {
+        const res = await fetch('/api/weddings/' + weddingId);
+        if (!res.ok) throw new Error();
+        weddingData = await res.json();
+        renderHeader();
+        await loadGuests();
+        document.getElementById('loading-state').classList.add('hidden');
+        document.getElementById('dashboard-content').classList.remove('hidden');
+    } catch {
+        showNotFound();
+    }
+}
+
+function showNotFound() {
+    document.getElementById('loading-state').classList.add('hidden');
+    document.getElementById('not-found').classList.remove('hidden');
+}
+
+function renderHeader() {
+    const header = document.getElementById('wedding-header');
+    header.style.background = themeGradients[weddingData.theme] || themeGradients.barat;
+    document.getElementById('header-names').textContent = weddingData.groom_name + ' & ' + weddingData.bride_name;
+    document.getElementById('header-details').textContent =
+        weddingData.event_type.charAt(0).toUpperCase() + weddingData.event_type.slice(1) +
+        ' | ' + weddingData.date + ' | ' + weddingData.venue;
+    document.getElementById('stat-theme').textContent =
+        weddingData.theme.charAt(0).toUpperCase() + weddingData.theme.slice(1);
+}
+
+async function loadGuests() {
+    const res = await fetch('/api/weddings/' + weddingId + '/guests');
+    guestsData = await res.json();
+    document.getElementById('stat-guests').textContent = guestsData.length;
+    document.getElementById('stat-invitations').textContent = guestsData.length;
+    renderGuests(guestsData);
+}
+
+function renderGuests(list) {
+    const tbody = document.getElementById('guest-list');
+    const noGuests = document.getElementById('no-guests');
+    const table = document.getElementById('guest-table');
+
+    if (list.length === 0) {
+        noGuests.classList.remove('hidden');
+        table.classList.add('hidden');
+        return;
+    }
+
+    noGuests.classList.add('hidden');
+    table.classList.remove('hidden');
+    const base = window.location.origin;
+    tbody.innerHTML = list.map(g => `
+        <tr class="border-b border-gray-50 hover:bg-gray-50/50">
+            <td class="py-3 font-medium text-gray-900">${g.name}</td>
+            <td class="py-3 text-gray-600">${g.contact}</td>
+            <td class="py-3">
+                <button onclick="copyLink('${g.unique_slug}')" class="text-xs text-amber-600 hover:text-amber-700 underline">
+                    Copy Link
+                </button>
+            </td>
+            <td class="py-3">
+                <a href="https://wa.me/${g.contact.replace(/[^0-9]/g, '')}?text=${encodeURIComponent('Assalam-o-Alaikum ' + g.name + '! You are warmly invited to celebrate our special day.\\n\\nView your personal wedding invitation here:\\n\\n' + base + '/invite/' + g.unique_slug)}"
+                   target="_blank" class="text-xs text-green-600 hover:text-green-700 underline">
+                    WhatsApp
+                </a>
+                &nbsp;
+                <button onclick="deleteGuest('${g.id}')" class="text-xs text-red-500 hover:text-red-600 underline">
+                    Delete
+                </button>
+            </td>
+        </tr>
+    `).join('');
+}
+
+function filterGuests() {
+    const q = document.getElementById('guest-search').value.toLowerCase();
+    const filtered = guestsData.filter(g =>
+        g.name.toLowerCase().includes(q) || g.contact.includes(q)
+    );
+    renderGuests(filtered);
+}
+
+function copyLink(slug) {
+    const url = window.location.origin + '/invite/' + slug;
+    navigator.clipboard.writeText(url).then(() => {
+        alert('Link copied: ' + url);
+    });
+}
+
+async function deleteGuest(id) {
+    if (!confirm('Delete this guest?')) return;
+    await fetch('/api/guests/' + id, { method: 'DELETE' });
+    await loadGuests();
+}
+
+async function handleCsvUpload(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    document.getElementById('csv-filename').textContent = file.name;
+    const msgEl = document.getElementById('csv-message');
+
+    const text = await file.text();
+    try {
+        const res = await fetch('/api/weddings/' + weddingId + '/guests/upload-csv', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ csv_content: text })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.detail || 'Upload failed');
+        msgEl.className = 'mt-4 rounded-xl bg-green-50 p-4 text-sm text-green-600';
+        msgEl.textContent = data.message + (data.duplicates_skipped ? ` ${data.duplicates_skipped} duplicates skipped.` : '');
+        msgEl.classList.remove('hidden');
+        await loadGuests();
+    } catch (err) {
+        msgEl.className = 'mt-4 rounded-xl bg-red-50 p-4 text-sm text-red-600';
+        msgEl.textContent = err.message;
+        msgEl.classList.remove('hidden');
+    }
+
+    e.target.value = '';
+    setTimeout(() => msgEl.classList.add('hidden'), 5000);
+}
+
+init();
+</script>
+{% endblock %}
