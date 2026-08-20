@@ -1,0 +1,42 @@
+:root {
+  --bg-deep: #04070d;
+  --text-warm: #f5efe4;
+  --text-dim: rgba(245, 239, 228, 0.72);
+  --gold: #f2c879;
+  --gold-soft: rgba(242, 200, 121, 0.9);
+  --sans: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+  --serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  color-scheme: dark;
+  font-family: var(--sans);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--sans);
+  background: var(--bg-deep);
+  color: var(--text-warm);
+  overflow: hidden;
+  height: 100dvh;
+}
+
+#root {
+  height: 100dvh;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
