@@ -4,10 +4,10 @@ def greet(name):
     return f"Hello, {name}!"
 
 def demo():
-    print(greet("Saad"))
+    print(greet("Sumaiya Rani"))
 
-if __name__ == "day_09_imports":
+if __name__ == "__main__":
     demo()
 
-assert greet("Saad") == "Hello, Saad!"
+assert greet("Sumaiya Rani") == "Hello, Sumaiya Rani!"
 print("Day 9 passed")
