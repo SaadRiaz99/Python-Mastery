@@ -26,7 +26,7 @@ class Order:
         return total
 
     def total_after_discount(self, percent):
-        return self.subtotal() - percent
+        return self.subtotal() - (self.subtotal() * percent / 100)
 
 order = Order()
 order.add_item("keyboard", 2)
