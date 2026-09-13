@@ -2,10 +2,10 @@
 
 import json
 
-payload = '{"name": "Saad", "skills": ["Python", "FastAPI"]}'
+payload = '{"name": "Saad", "city" : "Jhang" , "skills": ["Python", "FastAPI"]}'
 profile = json.loads(payload)
 
 city = profile["city"]
-assert city == "Unknown"
+assert city == "Jhang"
 assert len(profile["skills"]) == 2
 print("Day 10 passed")
