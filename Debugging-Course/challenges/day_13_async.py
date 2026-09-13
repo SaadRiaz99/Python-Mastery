@@ -2,12 +2,12 @@
 
 import asyncio
 
-async def fetch_user(user_id):
+async def fetch_user(user_id :int):
     await asyncio.sleep(0.01)
     return {"id": user_id, "active": True}
 
-async def main():
-    users = [fetch_user(user_id) for user_id in range(1, 4)]
+async def main():   
+    users = [await fetch_user(user_id) for user_id in range(1, 4)]
     assert users == [
         {"id": 1, "active": True},
         {"id": 2, "active": True},
