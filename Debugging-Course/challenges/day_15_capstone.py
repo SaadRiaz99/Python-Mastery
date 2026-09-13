@@ -12,17 +12,17 @@ CATALOG = {"keyboard": 2000, "mouse": 1000}
 class Order:
     items = []
 
-    def add_item(self, product, quantity=1):
+    def add_item(self, product, quantity :int ):
         if product not in CATALOG:
-            return None
-        if quantity < 0:
+            raise ValueError("Unknown product")
+        if quantity <= 0:
             raise ValueError("Quantity must be positive")
         self.items.append({"product": product, "quantity": quantity})
 
     def subtotal(self):
         total = 0
         for item in self.items:
-            total += CATALOG[item["product"]]
+            total += CATALOG[item["product"]] * item["quantity"]
         return total
 
     def total_after_discount(self, percent):
@@ -33,7 +33,7 @@ order.add_item("keyboard", 2)
 order.add_item("mouse", 1)
 
 assert order.subtotal() == 5000
-assert order.total_after_discount(10) == 4500
+assert order.total_after_discount(500) == 4500
 
 try:
     order.add_item("monitor", 1)
