@@ -1,7 +1,7 @@
 print("Calculating the average temperature...")
 print("Saad Riaz")
 
-temperature = [50.2, 72.5, 5.7, 41.0, 36.5]
+temperature = [50.2, 72.5, 51.7, 41.0, 36.5]
 
 
 
