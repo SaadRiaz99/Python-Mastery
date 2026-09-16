@@ -3,10 +3,11 @@ print("Saad Riaz")
 
 temperature = [50.2, 72.5, 51.7, 41.0, 36.5]
 
+total = 0
 
 
 for temp in temperature:
-    total =+ temp
+    total += temp
 
 
 average = total / len(temperature)
