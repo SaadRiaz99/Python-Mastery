@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-        # Saad's Debugging Progress
-=======
 # Saad's Debugging Course Progress
->>>>>>> 80022203eaa90ed3567fe505f09059c1a6ffcddf
 
 > Teacher-reviewed against the actual code committed in `Debugging-Course/challenges/`.
 
@@ -17,6 +13,12 @@
 | Current score | **108/150 — 72%** |
 | Current level | Improving beginner → early intermediate |
 | Promotion status | Revision required before final completion |
+
+## Next Phase
+
+The next learning stage is available in [FastAPI Debugging Phase](fastapi_phase/README.md).
+
+Start Phase 2 after revising Days 05, 06, 07 and 15. The FastAPI phase is intentionally a little more advanced and focuses on reading HTTP errors, request validation, dependencies, async behavior, testing and API architecture.
 
 ## Day-by-Day Assessment
 
@@ -54,120 +56,38 @@
 
 A debugger fixes the implementation—not the expected result just to make a test pass.
 
-Use this discipline:
-
 1. Read the requirement.
 2. Keep the original assertion unchanged.
 3. Reproduce the failure.
 4. Change the smallest implementation detail.
 5. Run the same assertion again.
 
-This is the main issue in Days 05, 06 and 15.
-
 ### 2. Catch Only Expected Exceptions
 
-A bare `except:` hides unrelated bugs.
-
-Ask:
-
-- Which operation can fail?
-- Which exact exception represents invalid user input?
-- Which exception represents a programming or system failure that should remain visible?
-
-Day 06 must demonstrate this difference.
+A bare `except:` hides unrelated bugs. Identify the exact operation and exception before handling it.
 
 ### 3. Understand Ownership and Side Effects
 
-State and code must belong in the correct place:
-
 - Per-object mutable data belongs in `__init__`.
-- Demo/test code should not execute when a module is imported.
-- File paths should be based on the script location, not the terminal's current directory.
+- Demo/test code should not execute during import.
+- File paths should be based on the script location.
 - Optional dictionary fields need safe access.
-
-This connects Days 07, 08, 09, 10 and 15.
 
 ## Required Revision Order
 
-### Revision 1 — Day 05: Collections
-
-Goal: update only Ali's score without changing another student's score or the original assertions.
-
-Evidence required:
-
-- Print both records before the update.
-- Apply one update.
-- Assert Ali changed.
-- Assert the other student did not change.
-- Explain whether the nested dictionaries are separate objects.
-
-### Revision 2 — Day 06: Exceptions
-
-Goal: invalid text input returns `None`, but division by zero remains visible.
-
-Evidence required:
-
-- Test valid division.
-- Test invalid string input.
-- Test zero division.
-- Name every exception you intentionally catch.
-- Do not use bare `except`.
-
-### Revision 3 — Day 07: Reliable Paths
-
-Goal: the script must work from the repository root and from the challenge directory.
-
-Evidence required:
-
-- Build the path using `Path(__file__)`.
-- Ensure the data directory exists.
-- Run the file from two working directories.
-- Record both commands and outputs.
-
-### Revision 4 — Day 15: Capstone
-
-Goal: complete the order system without changing the stated requirements.
-
-Evidence required:
-
-- Each `Order` owns its own items list.
-- Unknown products raise `ValueError`.
-- Zero/negative quantities raise `ValueError`.
-- Subtotal is 5000.
-- A 10% discount returns 4500.
-- Create a second order to prove item lists are not shared.
-
-## Quick Concept Checks
-
-Answer these in your own words before asking for a full solution:
-
-1. Why does `name: str` not convert an integer to a string automatically?
-2. What is the difference between `except ValueError` and bare `except`?
-3. Why is a list defined on a class shared, while `self.items = []` is per object?
-4. What executes when Python imports a module?
-5. When should `dict.get("city")` be preferred over `dict["city"]`?
-6. What is the difference between returning a list and yielding values?
-7. Why can `asyncio.gather()` be faster than awaiting independent calls one by one?
+1. **Day 05:** Change only Ali's score and preserve the original test.
+2. **Day 06:** Invalid text returns `None`, but zero division remains visible.
+3. **Day 07:** Use `Path(__file__)` and test from two working directories.
+4. **Day 15:** Give every `Order` its own list and preserve the 10% discount requirement.
 
 ## Teacher Guidance
 
-Saad, tum code ko dekh kar common syntax aur flow bugs solve kar rahe ho—especially functions, decorators, generators aur async mein improvement clear hai. Lekin professional debugging ka standard sirf `Day passed` print hona nahi hai. Requirement, original tests aur edge cases ko preserve karna zaroori hai.
-
-Ab tumhara focus hona chahiye:
+Saad, tum common syntax aur flow bugs solve kar rahe ho—especially functions, decorators, generators aur async mein improvement clear hai. Professional debugging ka standard sirf `Day passed` print hona nahi hai. Requirement, original tests aur edge cases preserve karna zaroori hai.
 
 - **30% concept reading**
 - **70% coding, debugging and proof**
-- Har bug ke liye: **symptom → root cause → smallest fix → test → prevention**
+- Har bug: **symptom → root cause → smallest fix → test → prevention**
 - AI se pehle hint lo; final code tab dekho jab apna attempt aur reasoning likh chuke ho.
-
-## Promotion Rule
-
-Course complete tab mark hoga jab:
-
-- Days 05, 06, 07 and 15 pass,
-- Days 01, 09 and 10 ke partial concepts explain aur correct hon,
-- all original assertions/requirements are preserved,
-- and every corrected day includes at least one edge-case test.
 
 ## Debug Report Template
 
@@ -185,4 +105,4 @@ How I verified it:
 How I will prevent it next time:
 ```
 
-_Last teacher review: 13 September 2026._
+_Last teacher review: 17 September 2026._
