@@ -12,10 +12,12 @@ d3_array = np.array([[[1, 2],
                     [3, 4]], 
                     [[5, 6], 
                     [7, 8]]])
-
-print("1D Array:")
-print(d1_array) 
-print("\n2D Array:")
-print(d2_array)
-print("\n3D Array:")
-print(d3_array) 
+matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
+print("Matrix:")
+print(matrix)
+# print("1D Array:")
+# print(d1_array) 
+# print("\n2D Array:")
+# print(d2_array)
+# print("\n3D Array:")
+# print(d3_array) 
