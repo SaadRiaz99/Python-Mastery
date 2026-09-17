@@ -13,8 +13,13 @@ d3_array = np.array([[[1, 2],
                     [[5, 6], 
                     [7, 8]]])
 matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
-print("Matrix:")
-print(matrix)
+ran = np.arange(2 , 30 , 2)
+
+print(ran)
+
+# print("Matrix:")
+# print(matrix)
+
 # print("1D Array:")
 # print(d1_array) 
 # print("\n2D Array:")
