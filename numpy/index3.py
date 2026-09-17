@@ -14,8 +14,10 @@ d3_array = np.array([[[1, 2],
                     [7, 8]]])
 matrix = np.array([[1,2,3],[4,5,6],[7,8,9]])
 ran = np.arange(2 , 30 , 2)
-
-print(ran)
+ey = np.eye(3)
+print("Identity Matrix:")
+print(ey)
+# print(ran)
 
 # print("Matrix:")
 # print(matrix)
