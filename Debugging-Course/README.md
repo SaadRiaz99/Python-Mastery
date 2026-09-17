@@ -44,3 +44,15 @@ python -m pdb Debugging-Course/challenges/day_04_functions.py
 ```
 
 Start with Day 1 and solve in order. The assertions are your built-in checks: no assertion error means the task is complete.
+
+
+## Phase 2 — FastAPI Debugging
+
+After the Python foundation and required revisions, continue with:
+
+- [FastAPI Phase curriculum](fastapi_phase/README.md)
+- [How to analyse mistakes like an engineer](fastapi_phase/ENGINEER_ANALYSIS.md)
+- [FastAPI Phase progress](fastapi_phase/PROGRESS.md)
+
+Phase 2 covers Days 16–23: validation, routes, HTTP errors, dependencies,
+async behavior, data lifecycle, API tests and a support-agent API capstone.
