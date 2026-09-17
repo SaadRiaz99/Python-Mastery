@@ -14,4 +14,4 @@ name_array = np.array(["Saad Riaz", "Talha Riaz", "Jane Smith", "Umar Riaz", "Su
 
 print(name_array)
 #1 dimension
-array_1d = np.array(
+
