@@ -4,3 +4,6 @@ name = np.array(["Saad Riaz", "Talha Riaz", "Jane Smith", "Umar Riaz", "Sumaiya 
 
 print("Data type of the temperature array:", temperature.dtype)
 print("Data type of the name array:", name.dtype)
+typechange = temperature.astype(int)
+print("Data type of the temperature array after conversion:", typechange.dtype)
+print(typechange.dtype)
