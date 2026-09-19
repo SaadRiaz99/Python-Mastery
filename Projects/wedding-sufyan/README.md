@@ -1,6 +1,6 @@
 # M Sufyan — Pakistani wedding invitation
 
-An original ivory, maroon and antique-gold invitation with an arch border, Bismillah, Urdu invitation, family names, Mehndi, Nikah / Barat, Walima and RSVP. Mobile-friendly, keyboard-accessible and printable. No paid services, dependencies, tracking or database.
+An original smokey-white, silver-grey and charcoal invitation with an arch border, Bismillah, Urdu invitation, family names, Mehndi, Nikah / Barat, Walima and RSVP. Mobile-friendly, keyboard-accessible and printable. No paid services, dependencies, tracking or database.
 
 ## Open locally (Windows / PowerShell)
 
@@ -42,8 +42,8 @@ All existing repository projects are preserved. This project is entirely contain
 
 ## Individual invitation cards
 
-- [Nikah / Barat card](nikah-barat.html): maroon, ivory and gold, with only Nikah / Barat date, timings and venue.
-- [Walima card](walima.html): sage, ivory and gold, with only Walima date, reception / dinner timings and venue.
+- [Nikah / Barat card](nikah-barat.html): smokey white with silver-grey borders and charcoal text, with only Nikah / Barat date, timings and venue.
+- [Walima card](walima.html): smokey white with silver-grey borders and charcoal text, with only Walima date, reception / dinner timings and venue.
 - [Combined card](index.html): the original multi-event invitation remains available.
 
 Choose a card from the links above the invitation, or open its HTML file. Each individual card has its own editable family names and RSVP and its own download filename. Download or print each card separately. Edits do not transfer between cards and must be saved before navigating to another card.
