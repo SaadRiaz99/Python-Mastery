@@ -36,7 +36,7 @@ Reference collection reviewed before creating this original design:
 - [Little Letter Company — Pakistani wedding invitations](https://www.littlelettercompany.com/collections/wedding-invitations): Pearl & Gold, Royal Botanical and neutral colour directions.
 - [Muslim invitation reference board](https://in.pinterest.com/weddings0180/muslim-wedding-invitations/): arch and Nikah / Walima invitation ideas.
 
-No third-party artwork or template was copied. Ornamentation uses CSS and typographic flourishes; system fonts keep the card independent of external font services. Arabic/Urdu appearance depends on installed fonts.
+No third-party artwork or template was copied. Individual cards use original AI-generated floral artwork embedded in the CSS; the combined card retains its earlier typographic ornamentation. System fonts keep the card independent of external font services. Arabic/Urdu appearance depends on installed fonts.
 
 All existing repository projects are preserved. This project is entirely contained in `Projects/wedding-sufyan/`.
 
@@ -47,3 +47,13 @@ All existing repository projects are preserved. This project is entirely contain
 - [Combined card](index.html): the original multi-event invitation remains available.
 
 Choose a card from the links above the invitation, or open its HTML file. Each individual card has its own editable family names and RSVP and its own download filename. Download or print each card separately. Edits do not transfer between cards and must be saved before navigating to another card.
+
+## Floral design update
+
+The separate Nikah / Barat and Walima cards now use smokey-white botanical stationery: ivory roses, pale grey-green leaves, a thin silver double frame, and italic name lettering. The combined card remains unchanged in layout.
+
+Style reference requested: [Hand-drawing floral wedding invitation](https://www.magnific.com/free-vector/beautiful-hand-drawing-wedding-invitation-floral-card-template_11171436.htm). The page was readable but its full reference image could not be retrieved; this is an original floral interpretation, not an exact reproduction.
+
+The built-in image-generation tool created the background. It is embedded as an optimised WebP data URI in `styles.css`, so personalised HTML exports contain the artwork without external files or network access. Enable background graphics when printing.
+
+Artwork brief: “Portrait smokey-white wedding stationery, delicate hand-drawn ivory roses, silver-grey blossoms, pale grey-green eucalyptus, fine graphite outlines and light watercolor washes; asymmetric upper-left and lower-right arrangements; empty central area for editable text; flat front view; no text, logos, watermark or border.”
