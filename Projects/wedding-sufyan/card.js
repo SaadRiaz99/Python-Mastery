@@ -4,11 +4,12 @@ const labels = {
   mehndiDate: 'Mehndi date & time', mehndiVenue: 'Mehndi venue & address',
   baratDate: 'Nikah / Barat date', baratTime: 'Nikah, arrival & dinner timings',
   baratVenue: 'Nikah / Barat venue & address', walimaDate: 'Walima date & time',
-  walimaVenue: 'Walima venue & address', rsvp: 'RSVP contact name & phone'
+  walimaTime: 'Walima reception & dinner timings', walimaVenue: 'Walima venue & address', rsvp: 'RSVP contact name & phone'
 };
 const fields = document.getElementById('fields');
 for (const [key, labelText] of Object.entries(labels)) {
   const target = document.querySelector(`[data-field="${key}"]`);
+  if (!target) continue; // Individual cards only edit their own event fields.
   const fallback = target.textContent;
   const label = document.createElement('label');
   label.textContent = labelText;
@@ -42,7 +43,7 @@ document.getElementById('download').addEventListener('click', async () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
-    link.download = 'M-Sufyan-Wedding-Invitation.html';
+    link.download = document.body.dataset.downloadName || 'M-Sufyan-Wedding-Invitation.html';
     link.click();
     setTimeout(() => URL.revokeObjectURL(url), 1000);
     status.textContent = 'Personalised card downloaded. Open it in a browser, or use Ctrl+P to save a PDF.';

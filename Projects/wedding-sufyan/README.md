@@ -39,3 +39,11 @@ Reference collection reviewed before creating this original design:
 No third-party artwork or template was copied. Ornamentation uses CSS and typographic flourishes; system fonts keep the card independent of external font services. Arabic/Urdu appearance depends on installed fonts.
 
 All existing repository projects are preserved. This project is entirely contained in `Projects/wedding-sufyan/`.
+
+## Individual invitation cards
+
+- [Nikah / Barat card](nikah-barat.html): maroon, ivory and gold, with only Nikah / Barat date, timings and venue.
+- [Walima card](walima.html): sage, ivory and gold, with only Walima date, reception / dinner timings and venue.
+- [Combined card](index.html): the original multi-event invitation remains available.
+
+Choose a card from the links above the invitation, or open its HTML file. Each individual card has its own editable family names and RSVP and its own download filename. Download or print each card separately. Edits do not transfer between cards and must be saved before navigating to another card.
