@@ -17,7 +17,7 @@ Open http://localhost:8000. Stop with Ctrl+C. You can also open index.html direc
 
 Only the groom's name, **M Sufyan**, was supplied. Bride, family, dates, times, addresses and RSVP are clearly marked placeholders, not real event details.
 
-1. Open **Personalise this invitation** and fill the fields.
+1. Open the relevant card with `?edit=1` (for example `nikah-barat.html?edit=1`) to reveal **Personalise this invitation**, then fill the fields.
 2. Check every name, venue and time.
 3. Choose **Download personalised card** for a standalone HTML file with embedded styles; this export needs no other files and has no editing controls.
 4. Choose **Print / Save PDF** for a printable invitation. Use A4, 100% scale, background graphics enabled, and browser headers/footers disabled. Long custom text may require reducing the print scale.
@@ -36,7 +36,7 @@ Reference collection reviewed before creating this original design:
 - [Little Letter Company — Pakistani wedding invitations](https://www.littlelettercompany.com/collections/wedding-invitations): Pearl & Gold, Royal Botanical and neutral colour directions.
 - [Muslim invitation reference board](https://in.pinterest.com/weddings0180/muslim-wedding-invitations/): arch and Nikah / Walima invitation ideas.
 
-No third-party artwork or template was copied. Individual cards use original AI-generated floral artwork embedded in the CSS; the combined card retains its earlier typographic ornamentation. System fonts keep the card independent of external font services. Arabic/Urdu appearance depends on installed fonts.
+No third-party artwork or template was copied. Individual cards use original AI-generated floral artwork embedded in the CSS; the combined card retains its earlier typographic ornamentation. Embedded Latin Modern-derived fonts keep English typography consistent without external font services. Arabic/Urdu appearance depends on installed fonts.
 
 All existing repository projects are preserved. This project is entirely contained in `Projects/wedding-sufyan/`.
 
@@ -57,3 +57,15 @@ Style reference requested: [Hand-drawing floral wedding invitation](https://www.
 The built-in image-generation tool created the background. It is embedded as an optimised WebP data URI in `styles.css`, so personalised HTML exports contain the artwork without external files or network access. Enable background graphics when printing.
 
 Artwork brief: “Portrait smokey-white wedding stationery, delicate hand-drawn ivory roses, silver-grey blossoms, pale grey-green eucalyptus, fine graphite outlines and light watercolor washes; asymmetric upper-left and lower-right arrangements; empty central area for editable text; flat front view; no text, logos, watermark or border.”
+
+## Family invitation structure (ready for final details)
+
+The individual cards now use smokey pearl, champagne borders and muted sage lettering. English names use an embedded italic display font; body text uses an embedded book serif. Both are renamed Latin Modern subsets. See FONT-LICENSE.txt. Urdu and Arabic retain local font fallbacks.
+
+- Gentle one-time card and name entrance animations, subtle button hover movement.
+- Reduced-motion preferences respected; print output is static.
+- Guest mode hides editing controls and shows friendly “to be announced” wording for missing details. The missing bride name is hidden.
+- Add `?edit=1` to a card URL to access the local editor. This is a local editing convenience, not authentication or a server admin panel.
+- Share invitation uses native device sharing where supported, otherwise copies or displays the clean URL. Sharing is initiated only by the visitor.
+- Fonts and flowers stay embedded in standalone downloads.
+- No deployment has been made for this structure. Supply the final names, dates, venues, family names and RSVP before publishing the real invitation. An HTML download does not change the deployed invitation; final details must be committed in the source.
