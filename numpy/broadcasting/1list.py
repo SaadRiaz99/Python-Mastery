@@ -13,3 +13,11 @@ lst2 = np.array([4, 5, 6])
 
 result = lst1 + lst2
 print("Result of addition using numpy: ", result)
+
+# more fast through vectorization
+
+mul = lst1 * lst2
+print("Result of multiplication using numpy: ", mul)
+
+mul2 = lst1 * 2
+print("Result of multiplication with scalar using numpy: ", mul2)
