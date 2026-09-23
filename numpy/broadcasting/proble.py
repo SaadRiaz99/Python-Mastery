@@ -14,10 +14,11 @@ print("Final prices: ", final_price)
 
 
 # solution form numpy
+# faster than for loop
 rakam = np.array([319 , 279 , 650 , 560 ,1000])
 
 
-discount = 0.20
+discount = 0.02
 
 total_pricesx = rakam - (rakam * discount)
 
