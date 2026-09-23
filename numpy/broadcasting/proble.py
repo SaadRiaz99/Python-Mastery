@@ -11,3 +11,6 @@ for price in after_discount:
     total_price = price + (price * 0.05)
     final_price.append(price)
 print("Final prices: ", final_price)
+
+
+# solution form numpy
