@@ -29,3 +29,9 @@ print("Total elements:", sales.size)
 print("Data type:", sales.dtype)
 
 
+print("Indexing")
+
+print(f"Sales of laptop in Week {sales[0]}")
+
+weekend = sales[: ,5:]
+print(weekend)
