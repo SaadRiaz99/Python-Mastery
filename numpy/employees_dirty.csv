@@ -1,0 +1,61 @@
+employee_id,name,department,age,salary_pkr,experience_years,hours_per_week,performance_score,attendance_percent,city
+1001,Ali Ahmed,IT,22,45000,0,35,2.5,80,Karachi
+1002,Ayesha Khan, it ,23,52500,1,36,3.0,81,Lahore
+1003,Bilal Malik,Finance,NaN,60000,2,37,3.5,82,Islamabad
+1004,Fatima Noor,Sales,25,67500,3,38,4.0,83,Multan
+1005,Hamza Shah,Operations,26,,4,39,4.5,84,Hyderabad
+1006,Hina Ali,hr,27,82500,5,40,5.0,85,Karachi
+1007,Imran Qureshi,HR,28,90000,N/A,41,2.5,86,Lahore
+1008,Iqra Sheikh,Finance,29,97500,7,42,3.0,87,Islamabad
+1009,Junaid Akhtar,Sales,30,105000,8,null,3.5,88,Multan
+1010,Kiran Abbas,SALES,31,112500,9,44,4.0,89,Hyderabad
+1011,Mariam Aslam,IT,32,120000,10,45,nan,90,Karachi
+1012,Noman Raza,HR,33,127500,11,35,5.0,91,Lahore
+1013,Omar Farooq,Finance,34,135000,0,36,2.5,,Islamabad
+1014,Rabia Hassan,Sales,35,142500,1,37,3.0,93, karachi 
+1015,Sana Iqbal,Operations,-5,150000,2,38,3.5,94,Hyderabad
+1016,Talha Saeed,IT,37,157500,3,39,4.0,95,Karachi
+1017,Usman Tariq,HR,150,165000,4,40,4.5,96,Lahore
+1018,Zara Rehman,Finanec,39,172500,5,41,5.0,97,Islamabad
+1019,Danish Mir,Sales,40,-45000,6,42,2.5,98,Multan
+1020,Mehwish Aziz,Operations,41,187500,7,43,3.0,99,Hyderabad
+1021,Ali Ahmed,IT,42,99999999,8,44,3.5,100,Karachi
+1022,,HR,43,202500,9,45,4.0,80,Lahore
+1023,Bilal Malik,Finance,44,210000,-3,35,4.5,81,Islamabad
+1024,Fatima Noor,Sales,45,217500,11,36,5.0,82,Multan
+1025,Hamza Shah,Operations,46,45000,80,37,2.5,83,Hyderabad
+1026,Hina Ali,IT,47,52500,1,38,3.0,84,
+1027,Imran Qureshi,HR,48,60000,2,200,3.5,85,Lahore
+1028,Iqra Sheikh,Finance,49,67500,3,40,4.0,86,Islamabad
+1029,Junaid Akhtar,Sales,50,75000,4,41,9,87,Multan
+,Kiran Abbas,Operations,51,82500,5,42,5.0,88,Hyderabad
+1031,Mariam Aslam,IT,22,90000,6,43,2.5,145,Karachi
+1032,Noman Raza,HR,23,97500,7,44,3.0,90,Lahore
+1033,Omar Farooq,Finance,24,105000,8,45,3.5,-10,Islamabad
+1001,Rabia Hassan,Sales,25,112500,9,35,4.0,92,Multan
+1035,Sana Iqbal,Operations,twenty,120000,10,36,4.5,93,Hyderabad
+1036,Talha Saeed,IT,27,127500,11,37,5.0,94,Karachi
+1037,Usman Tariq,HR,28,ERROR,0,38,2.5,95,Lahore
+1038,Zara Rehman,Finance,29, 85000 ,1,39,3.0,96,Islamabad
+1039,Danish Mir,Sales,30,150000,unknown,40,3.5,97,Multan
+1040,Mehwish Aziz,Operations,31,157500,3,41,4.0,98,Hyderabad
+1041,Ali Ahmed,IT,32,165000,4,forty,4.5,99,Karachi
+1042,Ayesha Khan,,33,172500,5,43,5.0,100,Lahore
+1043,Bilal Malik,Finance,34,180000,6,44,bad,80,Islamabad
+1044,Fatima Noor,Sales,35,187500,7,45,3.0,81,Multan
+1045,Hamza Shah,Operations,36,195000,8,35,3.5,missing,Hyderabad
+1046,Hina Ali,IT,37,202500,9,36,4.0,NaN,Karachi
+1047,Imran Qureshi,HR,38,inf,10,37,4.5,84,Lahore
+1048,Iqra Sheikh,Finance,39,217500,11,38,5.0,85,Islamabad
+1049,Junaid Akhtar,Sales,40,45000,0,-inf,2.5,86,Multan
+1050,Kiran Abbas,Operations,41,52500,,40,3.0,87,Hyderabad
+1051,Mariam Aslam,IT,42,0,2,41,3.5,88,Karachi
+1052,Noman Raza,HR,43,67500,3,42,4.0,89,Lahore
+1053,Omar Farooq,Finance,44,75000,4,-8,4.5,90,Islamabad
+1054,Rabia Hassan,Sales,12,82500,5,44,5.0,91,Multan
+1055,Sana Iqbal,Operations,46,90000,6,45,-1,92,Hyderabad
+1056,Talha Saeed,IT,47,97500,7,35,3.0,93,Karachi
+1057,Usman Tariq,HR,48,105000,8,36,3.5,94,Lahore
+1008,Iqra Sheikh,Finance,29,97500,7,42,3.0,87,Islamabad
+1059,Danish Mir,Sales,50,120000,10,38,4.5,96,Multan
+1020,Mehwish Aziz,Operations,41,187500,7,43,3.0,99,Hyderabad
