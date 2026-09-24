@@ -2,7 +2,7 @@ import numpy as np
 
 products = np.array(["laptop", "mouse", "keyboard", "headphones"])
 
-prices = np.array([10000, 5000, 75000, 1050])  # Prices for Laptop, Mouse, Keyboard, Headphones
+prices = np.array([1000, 5000, 7500, 1050])  # Prices for Laptop, Mouse, Keyboard, Headphones
 
 days = np.array(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
 
