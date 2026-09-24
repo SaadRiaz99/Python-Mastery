@@ -54,4 +54,8 @@ for product,revenue in zip(products , weelky_revenue):
 print("Total Revenue " , weelky_revenue.sum())
 
 
+print("label")
+label = np.where(weekly_unit > 25 , "High" , "low")
+print(label)
+
 
