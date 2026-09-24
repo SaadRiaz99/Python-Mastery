@@ -27,3 +27,5 @@ print("Shape:", sales.shape)
 print("Dimensions:", sales.ndim)
 print("Total elements:", sales.size)
 print("Data type:", sales.dtype)
+
+
