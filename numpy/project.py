@@ -2,7 +2,7 @@ import numpy as np
 
 products = np.array(["laptop", "mouse", "keyboard", "headphones"])
 
-prices = np.array([1000, 50, 75, 150])  # Prices for Laptop, Mouse, Keyboard, Headphones
+prices = np.array([10000, 5000, 75000, 1050])  # Prices for Laptop, Mouse, Keyboard, Headphones
 
 days = np.array(["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"])
 
@@ -48,7 +48,7 @@ for product,unit in zip(products, weekly_unit):
 print("Weekly Revenue")
 weelky_revenue = prices * weekly_unit
 
-for product,revenue in zip(products , weekly_unit):
+for product,revenue in zip(products , weelky_revenue):
     print(f"The prodcut is {product} and revenue is {revenue}")
 
 print("Total Revenue " , weelky_revenue.sum())
