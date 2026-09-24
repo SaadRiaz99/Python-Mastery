@@ -34,4 +34,15 @@ print("Indexing")
 print(f"Sales of laptop in Week {sales[0]}")
 
 weekend = sales[: ,5:]
+print("Column" , days[5:])
 print(weekend)
+
+print("Weekly Unit os Sell")
+weekly_unit = sales.sum(axis=1)
+print(weekly_unit)
+
+for product,unit in zip(products, weekly_unit):
+    print(f"The Prodduct is {product} and Unit is {unit}")
+
+
+
