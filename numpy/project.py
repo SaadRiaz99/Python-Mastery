@@ -45,4 +45,11 @@ for product,unit in zip(products, weekly_unit):
     print(f"The Prodduct is {product} and Unit is {unit}")
 
 
+print("Weekly Revenue")
+weeky_revenue = prices * weekly_unit
+
+for product,revenue in zip(products , weekly_unit):
+    print(f"The prodcut is {product} and revenue is {revenue}")
+
+
 
