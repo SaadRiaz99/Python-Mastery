@@ -1,7 +1,34 @@
-name,age,city,marks
-Ali,20,Karachi,85
-Sara,22,Lahore,90
-Usman,19,Islamabad,78
-Ayesha,21,Karachi,88
-Hamza,23,Rawalpindi,80
-Mehak,18,Lahore,75
+name,age,city,marks,gender,department,attendance,passed
+Ali,20,Karachi,85,Male,CS,90,true
+Sara,22,Lahore,90,Female,Data Science,95,true
+Usman,19,Islamabad,78,Male,Engineering,80,true
+Ayesha,21,Karachi,88,Female,Marketing,92,true
+Hamza,23,Rawalpindi,80,Male,Finance,85,true
+Mehak,18,Lahore,75,Female,Design,78,true
+Bilal,24,Karachi,92,Male,CS,96,true
+Zain,20,Islamabad,82,Male,Engineering,88,true
+Hina,22,Karachi,87,Female,Data Science,91,true
+Areeba,21,Lahore,84,Female,Finance,89,true
+Noman,25,Quetta,76,Male,Marketing,77,true
+Sana,19,Islamabad,89,Female,CS,93,true
+Hamid,26,Karachi,91,Male,Engineering,94,true
+Fiza,20,Lahore,79,Female,Design,82,true
+Ibrahim,23,Rawalpindi,86,Male,Finance,90,true
+Kiran,21,Karachi,83,Female,Data Science,85,true
+Talha,22,Islamabad,88,Male,CS,92,true
+Rida,18,Lahore,77,Female,Marketing,80,true
+Shahbaz,24,Karachi,94,Male,Engineering,97,true
+Mariam,20,Quetta,81,Female,Finance,84,true
+Omer,19,Lahore,74,Male,Design,73,false
+Huda,25,Karachi,90,Female,Data Science,96,true
+Arham,21,Islamabad,85,Male,CS,87,true
+Noor,22,Rawalpindi,82,Female,Marketing,88,true
+Anas,23,Karachi,89,Male,Engineering,91,true
+Maryam,20,Lahore,78,Female,Finance,79,true
+Ayan,24,Islamabad,87,Male,CS,90,true
+Eman,19,Karachi,80,Female,Design,86,true
+Yasir,26,Lahore,93,Male,Data Science,98,true
+Saira,21,Quetta,84,Female,Marketing,89,true
+Umar,22,Karachi,86,Male,Finance,90,true
+Zahra,18,Islamabad,76,Female,CS,75,true
+Farhan,25,Lahore,88,Male,Engineering,92,true
