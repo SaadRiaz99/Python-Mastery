@@ -21,17 +21,19 @@ Do not rename the required JSON fields to match the broken model.
 """
 
 from fastapi import FastAPI, status
-from pydantic import BaseModel
+from pydantic import BaseModel ,Field
 
 app = FastAPI()
 
 
 class ProductCreate(BaseModel):
     product_name: str
-    cost: float
+    cost: float = Field(gt=0)
     available: int
 
 
 @app.post("/products", status_code=status.HTTP_200_OK)
 def create_product(product: ProductCreate):
     return product
+
+
