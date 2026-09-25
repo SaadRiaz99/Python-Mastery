@@ -14,13 +14,16 @@ Preserve the expected requests.
 """
 
 from fastapi import FastAPI
-
+from pydantic import Field , BaseModel
 app = FastAPI()
 users = {1: {"id": 1, "name": "Saad"}}
 
-
+class Createuser(BaseModel):
+    name :str
 @app.get("/users/{user_id}")
 def get_user(user_id: int):
+    if user_id not in users:
+        raise HTTP
     return users[user_id]
 
 
