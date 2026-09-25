@@ -10,3 +10,6 @@ print(df)
 print("JSON Data")
 js = pd.read_json("pandas/data.json")
 print(js) 
+
+print("HTml")
+py = pd
