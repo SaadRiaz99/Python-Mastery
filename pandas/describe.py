@@ -11,3 +11,5 @@ frm = pd.DataFrame(data)
 print("Save Data Frame")
 print(frm)
 
+print("Descriptive Statics")
+print(frm.describe())
