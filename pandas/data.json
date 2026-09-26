@@ -31,5 +31,6 @@
   {"name": "Saira", "age": 21, "city": "Quetta", "marks": 84, "gender": "Female", "department": "Marketing", "attendance": 89, "passed": true},
   {"name": "Umar", "age": 22, "city": "Karachi", "marks": 86, "gender": "Male", "department": "Finance", "attendance": 90, "passed": true},
   {"name": "Zahra", "age": 18, "city": "Islamabad", "marks": 76, "gender": "Female", "department": "CS", "attendance": 75, "passed": true},
-  {"name": "Farhan", "age": 25, "city": "Lahore", "marks": 88, "gender": "Male", "department": "Engineering", "attendance": 92, "passed": true}
+  {"name": "Farhan", "age": 25, "city": "Lahore", "marks": 88, "gender": "Male", "department": "Engineering", "attendance": 92, "passed": true},
+  {"name": "Sumaiya Rani", "age": 21, "city": "Jhang", "marks": 100, "gender": "Male", "department": "Engineering", "attendance": 92, "Failed": true}
 ]

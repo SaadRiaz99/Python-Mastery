@@ -11,5 +11,9 @@ print("JSON Data")
 js = pd.read_json("pandas/data.json")
 print(js) 
 
-print("HTml")
-py = pd
+print("Head")
+hd = js.head(10)
+print(hd)
+print("Tail")
+tl = js.tail(10)
+print("Tail" , tl)
