@@ -12,3 +12,10 @@ df = pd.DataFrame(data)
 print("--- ORIGINAL DATAFRAME ---")
 print(df)
 print("\n" + "="*50 + "\n")
+
+high_salary_mask = df["Salary"] > 650000
+print("Step 1: The Boolean Mask (True/False values):")
+print(high_salary_mask)
+print("\nStep 2: Final Filtered Data:")
+print(df[high_salary_mask])
+print("\n" + "="*50 + "\n")
