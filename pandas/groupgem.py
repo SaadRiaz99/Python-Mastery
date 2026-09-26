@@ -14,3 +14,7 @@ data = {
 
 dt = pd.DataFrame(data)
 print(dt)
+print("\n" + "="*50 + "\n")
+
+total_sales_of_group = dt.groupby("Shop Branch")["Customers"].sum()
+print(total_sales_of_group)
