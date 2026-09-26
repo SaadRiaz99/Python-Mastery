@@ -13,9 +13,15 @@ print("--- ORIGINAL DATAFRAME ---")
 print(df)
 print("\n" + "="*50 + "\n")
 
-high_salary_mask = df["Salary"] > 650000
+high_salary_mask = df["Salary"] > 6000
 print("Step 1: The Boolean Mask (True/False values):")
 print(high_salary_mask)
 print("\nStep 2: Final Filtered Data:")
 print(df[high_salary_mask])
+print("\n" + "="*50 + "\n")
+
+it_expert = df[(df["Department"] == "IT") & (df["Experience_Years"] > 4)]
+print(it_expert)
+print("\nStep 2: Final Filtered Data:")
+# print(df[it_expert])
 print("\n" + "="*50 + "\n")
