@@ -1,0 +1,8 @@
+finding data?
+missing data
+what type of data
+row, column
+
+
+info() number of row and clumn 
+
