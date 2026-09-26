@@ -13,7 +13,7 @@ Learning tips:
 Preserve the expected requests.
 """
 
-from fastapi import FastAPI
+from fastapi import FastAPI , status , HTTPException
 from pydantic import Field , BaseModel
 app = FastAPI()
 users = {1: {"id": 1, "name": "Saad"}}
@@ -23,7 +23,10 @@ class Createuser(BaseModel):
 @app.get("/users/{user_id}")
 def get_user(user_id: int):
     if user_id not in users:
-        raise HTTP
+        raise HTTPException(
+            status_code=404,
+            detail="Avvount Not Found"
+        )
     return users[user_id]
 
 
@@ -32,6 +35,6 @@ def current_user():
     return {"id": "me", "name": "Saad"}
 
 
-@app.get("/users")
-def create_user(payload: dict):
+@app.post("/users" , status_code= status.HTTP_201_CREATED)
+def create_user(payload: Createuser):
     return payload
