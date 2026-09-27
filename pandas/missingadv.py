@@ -8,11 +8,11 @@ data = {
 }
 
 df = pd.DataFrame(data)
-
+spc = pd.Series([10 , 65 ], index = [1,3]) 
 fill_values = {
     'Stock': 60,
     'Brand': 'Aiee'
 }
-
+df["Stock"] = df["Stock"].fillna(spc)
 df = df.fillna(value=fill_values)
 print(df)
