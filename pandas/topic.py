@@ -71,4 +71,18 @@ print(name)
 
 # filter 
 
-fil = df[["Student_ID"  ,"Name"]                                                                                           "]]
+fil = df[["Student_ID"  ,"Name" ,"Fee_Status"]]
+print(fil)
+
+
+#filter
+
+pending = df.loc[
+    df["Fee_Status"] == "Pending",
+    ["Student_ID"  ,"Name", "Monthly_Fee", "Fee_Status"]
+
+]
+print(pending)
+
+
+#filter
