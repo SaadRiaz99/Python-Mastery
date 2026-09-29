@@ -78,7 +78,7 @@ print(fil)
 #filter
 
 pending = df.loc[
-    df["Fee_Status"] == "Pending",
+    df["Fee_Status"] == "Paid",
     ["Student_ID"  ,"Name", "Monthly_Fee", "Fee_Status"]
 
 ]
@@ -86,3 +86,4 @@ print(pending)
 
 
 #filter
+
