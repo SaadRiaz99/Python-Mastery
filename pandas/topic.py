@@ -87,3 +87,8 @@ print(pending)
 
 #filter
 
+filtered = df.loc[
+    df["Class"] == 9 ,
+    ["Student_ID"  ,"Name", "Monthly_Fee"]
+]
+print(filtered)
