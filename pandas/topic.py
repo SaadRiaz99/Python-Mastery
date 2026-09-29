@@ -104,5 +104,5 @@ print(filteredi)
 
 #filter
 
-atnd = df[(df["Attendance"] < 90)][["Name", "Student_ID", "Attendance"]]
+atnd = df[(df["Attendance"] >= 100)][["Name", "Student_ID", "Attendance"]]
 print(atnd)
