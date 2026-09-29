@@ -92,3 +92,11 @@ filtered = df.loc[
     ["Student_ID"  ,"Name", "Monthly_Fee"]
 ]
 print(filtered)
+
+
+#filtered
+filteredi = df.loc[
+    df[(["City"] == "karachi") & (df["Fee_Status"] == "Pending")] ,
+    ["Student_ID"  ,"Name", "Monthly_Fee"]
+]
+print(filteredi)
