@@ -66,5 +66,9 @@ clm = sv.shape
 print(f"The Shape is {se}") 
 print(f"The Column is {clm}") 
 
-name = data[["Name" , "Student_ID"]]
+name = df[["Student_ID"  ,"Name"]]
 print(name)
+
+# filter 
+
+fil = df[["Student_ID"  ,"Name"]                                                                                           "]]
