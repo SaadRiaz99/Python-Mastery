@@ -100,3 +100,9 @@ filteredi = df.loc[
     ["Student_ID", "Name", "Monthly_Fee"]
 ]
 print(filteredi)
+
+
+#filter
+
+atnd = df[(df["Attendance"] < 90)][["Name", "Student_ID", "Attendance"]]
+print(atnd)
