@@ -12,4 +12,5 @@ df = pd.DataFrame(data)
 print(df)
 
 print(df.isnull().sum())
+df.dropna(axis=0 inplace=True)
 print(df.fillna())
