@@ -10,8 +10,11 @@ df = pd.DataFrame(data)
 print(df)
 
 
-df["Bonus_Marks"] = df["Marks"] * 0.11
-print(df) 
+df["Bonus_Marks"] = df["Marks"] * 0.009
+
 
 df["Updated_Marks"] = df["Bonus_Marks"] + df["Marks"]
+
+
 df.insert(0, "Student_id", range(1, len(df) + 1))
+print(df)
