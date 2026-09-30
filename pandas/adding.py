@@ -18,3 +18,9 @@ df["Updated_Marks"] = df["Bonus_Marks"] + df["Marks"]
 
 df.insert(0, "Student_id", range(1, len(df) + 1))
 print(df)
+print("Special")
+marks = df.loc[
+    df["Marks"] > 80,
+    ["Student_id","Name", "Marks"]
+]
+print(marks)
