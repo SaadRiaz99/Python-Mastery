@@ -9,8 +9,11 @@ data = {
 }
 
 df = pd.DataFrame(data)
-print(df)
 
-print(df.isnull().sum())
-df.dropna(axis=0 inplace=True)
-print(df.fillna())
+avg_age = df["Age"].mean()
+df["Age"] = df["Age"].fillna(avg_age)
+
+# print(df.isnull().sum())
+# print(df.fillna())
+# df.dropna(axis=0 ,inplace=True)
+print(df)
