@@ -11,4 +11,5 @@ data = {
 df = pd.DataFrame(data)
 print(df)
 
-print(df.isnull())
+print(df.isnull().sum())
+print(df.fillna())
