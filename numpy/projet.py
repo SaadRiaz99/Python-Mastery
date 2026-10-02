@@ -39,5 +39,11 @@ else:
     print("No employees with attendance percentage greater than 100%.")
 
 attend = df["attendance_percent"].mean()
-print(f"Average attendance percentage after dropping invalid rows: {attend}")
+print(f"Average attendance percentage after dropping invalid rows: {attend:.2f}")
 print(df.head())
+
+
+df['performance_score']=df["performance_score"].apply(lambda x: float(x) * 2)
+df['performance_score']=df["performance_score"].round(2)
+
+print(df)
