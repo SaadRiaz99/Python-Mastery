@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Debug Todo App{% endblock %}</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <span class="brand">Debug Todo App</span>
+    <nav>
+      <a href="/">Todos</a>
+      <a href="/priority/1">Priority</a>
+      <a href="/stats">Stats</a>
+      <a href="/about">About</a>
+      <a href="/login">Login</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    {% if message %}
+    <div class="notice">{{ message }}</div>
+    {% endif %}
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>
