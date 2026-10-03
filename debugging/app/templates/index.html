@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}Todos - Debug Todo App{% endblock %}
+
+{% block content %}
+<h1>Todos</h1>
+
+<form class="new-todo" method="post" action="/todos">
+  <input type="text" name="title" placeholder="What needs doing?" required>
+  <select name="priority">
+    <option value="1">High</option>
+    <option value="2" selected>Medium</option>
+    <option value="3">Low</option>
+  </select>
+  <button type="submit">Add todo</button>
+</form>
+
+<div class="filters">
+  <a class="{{ 'active' if status == 'all' }}" href="/?status=all">All</a>
+  <a class="{{ 'active' if status == 'pending' }}" href="/?status=pending">Pending</a>
+  <a class="{{ 'active' if status == 'done' }}" href="/?status=done">Done</a>
+</div>
+
+<ul class="todo-list">
+  {% for todo in todos %}
+  <li class="{{ 'done' if todo.done else '' }}">
+    <span class="title">{{ todo.title }}</span>
+    <span class="priority p{{ todo.priority }}">{{ ['High', 'Medium', 'Low'][(todo.priority | int) - 1] }}</span>
+    <span class="actions">
+      <form method="post" action="/todos/{{ todo.id }}/toggle">
+        <button type="submit">{{ 'Undo' if todo.done else 'Done' }}</button>
+      </form>
+      <a class="btn" href="/todos/{{ todo.id }}/edit">Edit</a>
+      <form method="post" action="/todos/{{ todo.id }}/delete" onsubmit="return confirm('Delete this todo?')">
+        <button type="submit" class="danger">Delete</button>
+      </form>
+    </span>
+  </li>
+  {% else %}
+  <li class="empty">Nothing to show here.</li>
+  {% endfor %}
+</ul>
+
+{% if total_pages > 1 %}
+<nav class="pagination">
+  {% if page > 1 %}
+  <a href="/?page={{ page - 1 }}&status={{ status }}">&larr; Prev</a>
+  {% endif %}
+  <span>Page {{ page }} of {{ total_pages }} ({{ total }} todos)</span>
+  {% if page < total_pages %}
+  <a href="/?page={{ page + 1 }}&status={{ status }}">Next &rarr;</a>
+  {% endif %}
+</nav>
+{% endif %}
+{% endblock %}
