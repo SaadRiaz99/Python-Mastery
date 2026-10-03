@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}About - Debug Todo App{% endblock %}
+
+{% block content %}
+<h1>About</h1>
+
+<p>{{ summary }}</p>
+
+<p class="hint">This page has been visited <strong>{{ visits }}</strong> time(s) since the server started.</p>
+
+<p class="hint">The bugs this app shipped with are documented in <code>README.md</code>; run <code>python _smoke.py</code> to re-check every fix.</p>
+{% endblock %}
