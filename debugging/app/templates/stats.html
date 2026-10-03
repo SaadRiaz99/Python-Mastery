@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}Stats - Debug Todo App{% endblock %}
+
+{% block content %}
+<h1>Stats</h1>
+
+<ul class="stats">
+  <li><strong>{{ total }}</strong> todos in total</li>
+  <li><strong>{{ done }}</strong> completed</li>
+  <li><strong>{{ percent }}</strong>% completed</li>
+</ul>
+
+<table class="todo-list">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Priority</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for todo in todos %}
+    <tr>
+      <td>{{ todo.title }}</td>
+      <td>{{ ['High', 'Medium', 'Low'][(todo.priority | int) - 1] }}</td>
+      <td>{{ 'Done' if todo.done else 'Pending' }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
