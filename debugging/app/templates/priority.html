@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Priority {{ level }} - Debug Todo App{% endblock %}
+
+{% block content %}
+<h1>Priority {{ level }} todos</h1>
+
+<div class="filters">
+  <a class="{{ 'active' if level == 1 }}" href="/priority/1">High</a>
+  <a class="{{ 'active' if level == 2 }}" href="/priority/2">Medium</a>
+  <a class="{{ 'active' if level == 3 }}" href="/priority/3">Low</a>
+</div>
+
+<ul class="todo-list">
+  {% for todo in todos %}
+  <li class="{{ 'done' if todo.done else '' }}">
+    <span class="title">{{ todo.title }}</span>
+    <span class="priority p{{ todo.priority }}">{{ ['High', 'Medium', 'Low'][(todo.priority | int) - 1] }}</span>
+  </li>
+  {% else %}
+  <li class="empty">No todos with this priority.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
