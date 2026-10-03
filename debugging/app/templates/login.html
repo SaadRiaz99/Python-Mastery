@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Login - Debug Todo App{% endblock %}
+
+{% block content %}
+<h1>Login</h1>
+
+{% if error %}
+<p class="error">{{ error }}</p>
+{% endif %}
+
+<form class="new-todo" method="post" action="/login">
+  <label>
+    Username
+    <input type="text" name="username" value="admin" required>
+  </label>
+  <label>
+    Password
+    <input type="password" name="password" value="admin123" required>
+  </label>
+  <button type="submit">Sign in</button>
+</form>
+
+<p class="hint">Demo account: <code>admin / admin123</code></p>
+{% endblock %}
