@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Edit todo - Debug Todo App{% endblock %}
+
+{% block content %}
+<h1>Edit todo #{{ todo.id }}</h1>
+
+<form class="new-todo" method="post" action="/todos/{{ todo.id }}/edit">
+  <input type="text" name="title" value="{{ todo.title }}" required>
+  <select name="priority">
+    <option value="1" {{ 'selected' if todo.priority | int == 1 }}>High</option>
+    <option value="2" {{ 'selected' if todo.priority | int == 2 }}>Medium</option>
+    <option value="3" {{ 'selected' if todo.priority | int == 3 }}>Low</option>
+  </select>
+  <button type="submit">Save</button>
+  <a class="btn" href="/">Cancel</a>
+</form>
+{% endblock %}
