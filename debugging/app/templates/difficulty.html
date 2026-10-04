@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Difficulty {{ level }} - Debug School App{% endblock %}
+
+{% block content %}
+<h1>{{ ['Hard', 'Medium', 'Easy'][(level | int) - 1] }} assignments</h1>
+
+<div class="filters">
+  <a class="{{ 'active' if level == 1 }}" href="/difficulty/1">Hard</a>
+  <a class="{{ 'active' if level == 2 }}" href="/difficulty/2">Medium</a>
+  <a class="{{ 'active' if level == 3 }}" href="/difficulty/3">Easy</a>
+</div>
+
+<ul class="card-list">
+  {% for assignment in assignments %}
+  <li class="{{ 'submitted' if assignment.submitted else '' }}">
+    <span class="title">{{ assignment.title }}</span>
+    <span class="subject">{{ assignment.subject }}</span>
+    <span class="level d{{ assignment.difficulty }}">{{ ['Hard', 'Medium', 'Easy'][(assignment.difficulty | int) - 1] }}</span>
+  </li>
+  {% else %}
+  <li class="empty">No assignments at this difficulty.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
