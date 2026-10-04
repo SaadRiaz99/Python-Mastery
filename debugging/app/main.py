@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
 from app import database
-from app.routers import login, pages, todos
+from app.routers import assignments, login, pages
 
 BASE_DIR = Path(__file__).resolve().parent
 
@@ -16,11 +16,11 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Debug Todo App (intentionally buggy)", lifespan=lifespan)
+app = FastAPI(title="Debug School App (bug-hunting practice)", lifespan=lifespan)
 
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
-app.include_router(todos.router)
+app.include_router(assignments.router)
 app.include_router(login.router)
 app.include_router(pages.router)
 
