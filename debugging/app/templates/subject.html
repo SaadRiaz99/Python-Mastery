@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}{{ subject }} - Debug School App{% endblock %}
+
+{% block content %}
+<h1>{{ subject }} assignments</h1>
+
+<div class="filters subjects">
+  <span class="label">Subjects:</span>
+  {% for s in subjects %}
+  <a class="{{ 'active' if s.lower() == subject.lower() }}" href="/subject/{{ s }}">{{ s }}</a>
+  {% endfor %}
+</div>
+
+<ul class="card-list">
+  {% for assignment in assignments %}
+  <li class="{{ 'submitted' if assignment.submitted else '' }}">
+    <span class="title">{{ assignment.title }}</span>
+    <span class="subject">{{ assignment.subject }}</span>
+    <span class="level d{{ assignment.difficulty }}">{{ ['Hard', 'Medium', 'Easy'][(assignment.difficulty | int) - 1] }}</span>
+    <span class="actions">
+      <form method="post" action="/assignments/{{ assignment.id }}/toggle">
+        <button type="submit">{{ 'Undo' if assignment.submitted else 'Submit' }}</button>
+      </form>
+      <a class="btn" href="/assignments/{{ assignment.id }}/edit">Edit</a>
+    </span>
+  </li>
+  {% else %}
+  <li class="empty">No assignments for this subject.</li>
+  {% endfor %}
+</ul>
+{% endblock %}
