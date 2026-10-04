@@ -4,13 +4,13 @@ password = str(input("Enter your password: "))
 def encrypt(password:str ) -> str:
     encrypted_password = ""
     for char in password:
-        encrypted_password += chr(ord(char) + 3)  
+        encrypted_password += chr(ord(char) + 2)  
     return encrypted_password
 
 def decrypt(password:str = password) -> str:
     decrypted_password = ""
     for char in password:
-        decrypted_password += chr(ord(char) - 3)  
+        decrypted_password += chr(ord(char) - 2)  
     return decrypted_password
 
 encr = encrypt(password)
