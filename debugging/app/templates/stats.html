@@ -1,30 +1,32 @@
 {% extends "base.html" %}
 
-{% block title %}Stats - Debug Todo App{% endblock %}
+{% block title %}Stats - Debug School App{% endblock %}
 
 {% block content %}
 <h1>Stats</h1>
 
 <ul class="stats">
-  <li><strong>{{ total }}</strong> todos in total</li>
-  <li><strong>{{ done }}</strong> completed</li>
-  <li><strong>{{ percent }}</strong>% completed</li>
+  <li><strong>{{ total }}</strong> assignments in total</li>
+  <li><strong>{{ submitted }}</strong> submitted</li>
+  <li><strong>{{ percent }}</strong>% submitted</li>
 </ul>
 
-<table class="todo-list">
+<table class="card-list">
   <thead>
     <tr>
       <th>Title</th>
-      <th>Priority</th>
+      <th>Subject</th>
+      <th>Difficulty</th>
       <th>Status</th>
     </tr>
   </thead>
   <tbody>
-    {% for todo in todos %}
+    {% for assignment in assignments %}
     <tr>
-      <td>{{ todo.title }}</td>
-      <td>{{ ['High', 'Medium', 'Low'][(todo.priority | int) - 1] }}</td>
-      <td>{{ 'Done' if todo.done else 'Pending' }}</td>
+      <td>{{ assignment.title }}</td>
+      <td>{{ assignment.subject }}</td>
+      <td>{{ ['Hard', 'Medium', 'Easy'][(assignment.difficulty | int) - 1] }}</td>
+      <td>{{ 'Submitted' if assignment.submitted else 'Pending' }}</td>
     </tr>
     {% endfor %}
   </tbody>
