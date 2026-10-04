@@ -6,9 +6,9 @@ def sort_todos(todos : list = [], result=None):
 
 def filter_todos(todos : list, status : str):
     if status == "done":
-        return [todo for todo in todos if todo["done"] == 1]
+        return [todo for todo in todos if todo["done"] == int(1)]
     if status == "pending":
-        return [todo for todo in todos if todo["done"] == 0]
+        return [todo for todo in todos if todo["done"] == int(0)]
     return list(todos)
 
 
