@@ -1,18 +1,16 @@
-def sort_todos(todos : list = [], result=None):
-    result = list(todos) if result is None else result
-    result.sort(key=lambda todo: (todo["priority"], todo["id"]))
-    return result
+def sort_assignments(assignments: list) -> list:
+    return sorted(assignments, key=lambda a: (a["difficulty"], a["id"]))
 
 
-def filter_todos(todos : list, status : str):
-    if status == "done":
-        return [todo for todo in todos if todo["done"] == int(1)]
+def filter_assignments(assignments: list, status: str) -> list:
+    if status == "submitted":
+        return [a for a in assignments if a["submitted"] == int(1)]
     if status == "pending":
-        return [todo for todo in todos if todo["done"] == int(0)]
-    return list(todos)
+        return [a for a in assignments if a["submitted"] == int(0)]
+    return list(assignments)
 
 
-def format_title(title : str):
+def format_title(title: str) -> str:
     if title:
         return title.strip().title()
     return title
