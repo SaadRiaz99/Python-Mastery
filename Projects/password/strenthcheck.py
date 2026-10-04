@@ -33,7 +33,12 @@ def check_password(password):
 
 # Test with predefined passwords
 passwords = ["abc", "12345678", "abcdefgh", "Abcdefg1", "Abcdef1!"]
+password = input("Enter your password: ")
 
+score, strength = check_password(password)
+
+print(f"Score: {score}/5")
+print(f"Strength: {strength}")
 for password in passwords:
     score, strength = check_password(password)
     print(f"{password} | Score: {score}/5 | Strength: {strength}")
