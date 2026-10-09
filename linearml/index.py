@@ -6,8 +6,8 @@ import pandas as pd
 data = {
     'Name': ['Ali', 'Ayesha', 'Hamza', 'Sara', 'Zainab'],
     'Department': ['IT', 'HR', 'IT', 'Sales', 'HR'],
-    'Salary': [85000, 60000, 95000, 45000, 70000],
-    'Experience_Years': [5, 3, 7, 1, 4]
+    'Salary': [85000, 60000, np.nan, 45000, 70000],
+    'Experience_Years': [5, 3, 7, np.nan, 4]
 }
 
 df = pd.DataFrame(data)
