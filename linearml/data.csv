@@ -1,0 +1,27 @@
+Student_ID,Name,Age,Department,Marks,Attendance_Percent,Experience_Years
+101,Ali,20,IT,85,90,1
+102,Ayesha,21,HR,92,95,2
+103,Hamza,22,IT,78,80,1
+104,Sara,20,Sales,88,92,0
+105,Zainab,23,HR,95,96,3
+107,Sumaiya Rani,22,Sales,87,85,1
+106,Saad,21,IT,89,91,2
+107,Usman,22,Sales,67,75,1
+108,Fatima,20,IT,91,94,2
+109,Ahmed,24,HR,73,82,3
+110,Hira,21,Sales,86,89,1
+111,Bilal,23,IT,80,85,2
+112,Maria,22,HR,94,97,4
+113,Abdullah,20,IT,,88,1
+114,Noor,21,Sales,76,,0
+115,Usama,24,HR,82,84,
+116,Laiba,22,IT,90,93,2
+117,Aliya,20,Sales,69,78,1
+118,Faizan,23,IT,87,90,3
+119,Mehak,21,HR,93,96,2
+120,Rehan,22,Sales,74,81,1
+121,Anaya,20,IT,96,98,2
+122,Shahzaib,24,HR,71,79,4
+123,Amna,21,Sales,84,87,1
+124,Farhan,23,IT,79,83,2
+125,Iqra,22,HR,88,91,3
