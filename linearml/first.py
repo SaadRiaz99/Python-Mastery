@@ -10,7 +10,7 @@ print("The Year is " ,years , "and Price is" ,prices)
 model = LinearRegression()
 
 df = pd.DataFrame(
-   {"Years" : years,
+   {"Years" : years.flatten(),
     "Prcies" :prices}
 )
 x = years
@@ -19,13 +19,13 @@ predict = model.fit(x,y)
 
 
 future_years = np.array([[2026]])
-pridecterd_year = model.predict(future_years)
+predicted_price = model.predict(future_years)
 
 print(f"\nPredicted petrol price for 2026: Rs. {predicted_price[0]:.2f}")
 
 # Step 6: Visualize the result
-plt.scatter(X.flatten(), y, label="Sample data")
-plt.plot(X.flatten(), model.predict(X), label="Model prediction")
+plt.scatter(x.flatten(), y, label="Sample data")
+plt.plot(x.flatten(), model.predict(x), label="Model prediction")
 plt.xlabel("Year")
 plt.ylabel("Petrol price (Rs./litre)")
 plt.title("Petrol Price Prediction - Learning Project")
