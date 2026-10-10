@@ -14,7 +14,7 @@ df = pd.DataFrame(data)
 print(df)
 df["Name"] = df["Name"].str.upper()
 df["Salary"] = df["Salary"].fillna(df["Salary"].mean())
-
+df.loc[df[3,"Experience_Years",5]]
 print("Data")
-print(df.to_string(index=True))
+print(df.to_string(index=False))
 print(df.isnull().sum())
