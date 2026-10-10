@@ -1,10 +1,10 @@
 Student_ID,Name,Age,Department,Marks,Attendance_Percent,Experience_Years,Gender,Session
 101,Ali,20,IT,85,90,1,Male,Morning
+107,Sumaiya Rani,22,Sales,87,85,4,Female,Evening
 102,Ayesha,21,HR,92,95,2,Female,Evening
 103,Hamza,22,IT,78,80,1,Male,Morning
 104,Sara,20,Sales,88,92,0,Female,Evening
 105,Zainab,23,HR,95,96,3,Female,Morning
-107,Sumaiya Rani,22,Sales,87,85,4,Female,Evening
 106,Saad,21,IT,89,91,2,Male,Morning
 107,Usman,22,Sales,67,75,1,Male,Evening
 108,Fatima,20,IT,91,94,2,Female,Morning
