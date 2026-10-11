@@ -1,36 +1,21 @@
-from sklearn.preprocessing import LabelEncoder
+from pathlib import Path
 import pandas as pd
 
-df = pd.read_csv("data.csv")
+base_dir = Path(__file__).resolve().parent
+csv_path = base_dir / "data.csv"
+df = pd.read_csv(csv_path)
 # print(df.head())
 # print(df.shape)
 # print(df.info())
 # print(df.isnull().sum())
 
 df_label = df.copy()
+df.columns = df.columns.str.strip()
+dfa =pd.get_dummies(df, columns=["Session"])
+# print(dfa)
 
-# gender_encoder = LabelEncoder()
-# session_encoder = LabelEncoder()
-
-# df_label["Gender_Encoded"] = gender_encoder.fit_transform(df_label["Gender"])
-# df_label["Session_Encoded"] = session_encoder.fit_transform(df_label["Session"])
-gender_map = {
-    "Male" :0,
-    "Female" :1
-}
-session_map = {
-    "Morning": 0,
-    "Evening": 1
-}
-
-department_map = {
-    "IT": 0,
-    "HR": 1,
-    "Sales": 2
-}
-
-df_label["Gender_encoded"] = df_label["Gender"].map(gender_map) 
-df_label["Session_encoded"] = df_label["Session"].map(session_map) 
-df_label["Department_encoded"] = df_label["Department"].map(department_map) 
-print("\nENCODED DATA")
-print(df_label.head())
+df_departm4ent_encoding = pd.get_dummies(
+    df,columns=["Department"],
+    dtype=int
+)
+print(df_departm4ent_encoding)
