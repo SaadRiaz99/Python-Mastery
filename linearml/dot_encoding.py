@@ -18,4 +18,13 @@ df_departm4ent_encoding = pd.get_dummies(
     df,columns=["Department"],
     dtype=int
 )
-print(df_departm4ent_encoding)
+# print(df_departm4ent_encoding)
+
+X = df[["Age", "Attendance_Percent", "Experience_Years"]]
+y = df["Marks"]
+
+print("Features (X):")
+print(X.head())
+
+print("\nTarget (y):")
+print(y.head())
