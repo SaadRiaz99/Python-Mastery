@@ -11,8 +11,11 @@ df = pd.DataFrame(data)
 features_to_scale = df[['Study_Hours_Per_Week', 'Marks_Obtained']]
 standar_scale = StandardScaler()
 standard_scaled = standar_scale.fit_transform(features_to_scale)
-
+mini_max = MinMaxScaler()
+mini_mac_scaled = mini_max.fit_transform(features_to_scale)
 print("Standard Scaled Data Form")
-print(pd.DataFrame(standard_scaled , columns=["Study Hour" , "Marks Obtained"]))
 
+print(pd.DataFrame(standard_scaled , columns=["Study Hour" , "Marks Obtained"]))
+print()
+print(pd.DataFrame(mini_mac_scaled , columns=["Study Hour" , "Marks Obtained"]))
 
