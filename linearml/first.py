@@ -23,7 +23,7 @@ predicted_price = model.predict(future_years)
 
 print(f"\nPredicted petrol price for 2026: Rs. {predicted_price[0]:.2f}")
 print(f"Slope {model.coef_[0] ,2}")
-print("Intercept:", model.intercept_, 2)
+print("Intercept:", model.intercept_, 2) 
 # Step 6: Visualize the result
 # plt.scatter(x.flatten(), y, label="Sample data")
 # plt.plot(x.flatten(), model.predict(x), label="Model prediction")
