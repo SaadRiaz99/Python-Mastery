@@ -9,11 +9,31 @@ students = [
     {"id": 3, "name": "Sara", "age": 19}
 ]
 
+# @app.get("/")
+# async def main():
+#     return {"message": "Hello, Backend Engineer!"}
+
+
+# @app.get("/hello")
+# async def main():
+#     return {"message": "Hello, Backend Engineer Saad Bin Riaz!"}
+
+
+
 @app.get("/")
-async def main():
-    return {"message": "Hello, Backend Engineer!"}
+async def student():
+    return students
 
+@app.get("/students/{student_id}")
+async def check_student(students_id :int):
+    for student in students:
+        if student["id"] == students_id:
+            return student
 
-@app.get("/hello")
-async def main():
-    return {"message": "Hello, Backend Engineer Saad Bin Riaz!"}
+@app.post("/students")
+def add_student(student: Student):
+    students.append(student.model_dump())
+    return {
+        "message": "Student added successfully",
+        "student": student
+    }
