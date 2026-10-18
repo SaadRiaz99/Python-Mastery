@@ -16,6 +16,6 @@ mini_mac_scaled = mini_max.fit_transform(features_to_scale)
 print("Standard Scaled Data Form")
 
 print(pd.DataFrame(standard_scaled , columns=["Study Hour" , "Marks Obtained"]))
-print()
+print("MinMaxScaled")
 print(pd.DataFrame(mini_mac_scaled , columns=["Study Hour" , "Marks Obtained"]))
 
