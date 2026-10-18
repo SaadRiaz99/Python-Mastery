@@ -1,7 +1,7 @@
 # print("Saad Bin Riaz")
 # python -m venv venv
 from fastapi import FastAPI , HTTPException
-from 
+from model import Student
 app = FastAPI()
 students = [
     {"id": 1, "name": "Ali", "age": 20},
