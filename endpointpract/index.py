@@ -6,7 +6,8 @@ app = FastAPI()
 students = [
     {"id": 1, "name": "Ali", "age": 20},
     {"id": 2, "name": "Ahmed", "age": 22},
-    {"id": 3, "name": "Sara", "age": 19}
+    {"id": 3, "name": "Sara", "age": 19},
+    {"id": 5, "name": "Muskan", "age": 21}
 ]
 
 # @app.get("/")
