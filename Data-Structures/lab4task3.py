@@ -68,8 +68,7 @@ class DoublyLinkedList:
 
 
 # Task 3
-print("Saad Bin Riaz")
-print("BAI-25F-035")
+
 subjects = DoublyLinkedList()
 
 for subject in ["Python", "Mathematics", "Database", "Networking", "Operating Systems"]:

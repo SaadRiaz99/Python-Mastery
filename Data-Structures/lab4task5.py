@@ -1,5 +1,3 @@
-print("Saad Bin Riaz")
-print("BAI-25F-035")
 
 print("\nTask 5(a): Deleting a node you already hold a reference to")
 print(

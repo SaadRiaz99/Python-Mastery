@@ -79,8 +79,7 @@ class LinkedList:
 
 
 # # TASK 1: Create a list of five subjects
-# print("Saad Bin Riaz")
-# print("BAI-25F-035")
+
 subjects = LinkedList()
 
 # subjects.insert_at_tail("Programming")
@@ -94,8 +93,7 @@ subjects = LinkedList()
 
 
 # TASK 2: Insert at head and tail
-# print("Saad Bin Riaz")
-# print("BAI-25F-035")
+
 # subjects.insert_at_head("Computer Networks")
 # print("\nTASK 2: After Insertion at Head")
 # subjects.display()
@@ -106,8 +104,7 @@ subjects = LinkedList()
 
 
 # TASK 3: Delete a subject by name
-print("Saad Bin Riaz")
-print("BAI-25F-035")
+
 print("\nTASK 3: Before Deletion")
 subjects.display()
 
@@ -118,7 +115,6 @@ subjects.display()
 
 
 # TASK 4: Search for a subject
-# print("Saad Bin Riaz")
-# print("BAI-25F-035")
+
 # print("\nTASK 4: Search Operation")
 # subjects.search("Database Systems")

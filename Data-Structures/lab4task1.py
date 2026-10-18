@@ -36,8 +36,7 @@ class DoublyLinkedList:
 
 
 # Task 1
-print("Saad Bin Riaz")
-print("BAI-25F-035")
+
 subjects = DoublyLinkedList()
 
 subjects.insert_at_tail("Python")

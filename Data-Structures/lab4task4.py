@@ -34,8 +34,7 @@ class CircularLinkedList:
 
 
 # Task 4
-print("Saad Bin Riaz")
-print("BAI-25F-035")
+
 subjects = CircularLinkedList()
 
 for subject in ["Python", "Mathematics", "Database", "Networking"]:

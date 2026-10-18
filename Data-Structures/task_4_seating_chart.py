@@ -1,5 +1,3 @@
-print("Name: Saad Bin Riaz")
-print("ID: BAI-25F-035")
 
 seating_chart = [
     ["Saad", "Ali", "Empty"],
