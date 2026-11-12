@@ -1,9 +1,9 @@
 import pandas as pd
-im
-print(df.head(10))
-print(df.shape)
-print(df.dtypes)
-print(df.isnull().sum())
-print(df.duplicated())
+import analysis
+print(analysis.df.head(10))
+print(analysis.df.shape)
+print(analysis.df.dtypes)
+print(analysis.df.isnull().sum())
+print(analysis.df.duplicated())
 
-df[]
+analysis.df["Time"]= pd.to_datetime(analysis.df["Time"])
