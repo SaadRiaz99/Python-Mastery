@@ -25,3 +25,16 @@ def load_data():
     return customers, orders, products
 
 
+if __name__ == "__main__":
+    customers, products, orders = clean_data()
+
+    print("Customers:")
+    print(customers.head())
+
+    print("\nProducts:")
+    print(products.head())
+
+    print("\nOrders:")
+    print(orders.head())
+
+
