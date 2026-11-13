@@ -1,5 +1,10 @@
 import numpy as np
 import pandas as pd
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+data_path = BASE_DIR / "data" / "orders.csv"
+data_path = BASE_DIR / "data" / "customers.csv"
+data_path = BASE_DIR / "data" / "products.csv"
 
 def load_data():
     customers = pd.read_csv('data/customers.csv')
